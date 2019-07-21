@@ -1,0 +1,10 @@
+services:
+  - docker
+
+addons:
+  apt:
+    packages:
+      - docker-ce
+
+script:
+  - docker build -t miketrout/www.miketrout.dev .

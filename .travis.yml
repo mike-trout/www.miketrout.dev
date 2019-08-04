@@ -29,4 +29,5 @@ script:
 
 # Deploy  to Google Kubernetes Engine
 after_success:
+- chmod +x ./deploy.sh
 - if [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_BRANCH" == "master" ]; then ./deploy.sh; fi

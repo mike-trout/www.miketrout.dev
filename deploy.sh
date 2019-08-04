@@ -10,5 +10,5 @@ source $HOME/google-cloud-sdk/path.bash.inc
 gcloud components update kubectl
 
 gcloud auth activate-service-account --key-file gcloud-service-account-secret.json
-gcloud container clusters get-credentials gke-cluster --zone us-central1-a --project www.miketrout.dev
+gcloud container clusters get-credentials gke-cluster --zone us-central1-a --project www-miketrout-dev
 kubectl apply -f k8s.yaml

@@ -1,15 +1,32 @@
+---
+branches:
+  only:
+  - master
+
 services:
 - docker
+
 addons:
   apt:
     packages:
     - docker-ce
-script:
-  - docker build -t miketrout/www.miketrout.dev .
-  - echo "$DOCKER_HUB_PASSWORD" | docker login -u "$DOCKER_HUB_USERNAME" --password-stdin
-  - docker push miketrout/www.miketrout.dev
 
 env:
   global:
-    - secure: ezpKZDYQUeBGDrLbwqgtw9mbI5ieh6DwytkQUHEhhWV9hB2Fs2QdNuLvZDCoNkdz0xoFJWNYqwHUlzkh92hhMJ+xgLJGqDhVzcWrv3jcpANzvHaJuatjtkvStYbj6G5Fyc6ws2qyOQWW4gWHC7IplEyVPeFWv0DpEScfKK0+DW9rxbV1cIqrNlRyyj2NcXNXBWzn1GzOzZptmNxRTl4YMQLV6u/EYGwNxy1BlAPlFfTbycNDGIqevXgpxPQWUYxra2QUYfABHK+8MZl+zAEHekWgW306EzGUiB4Vz2cKSLM/2ORHjki1kKD+mtaUmwNneqA+mAjMvuVmWRR5CF+x5oDB1P3MjEMJ9SRVcWBkStjLkFLf7J7yt56GkRNj2wc36j5QvwDOASDZCdlSfhYXDfGQi2fc9TYPOFCF4lV3wz+3dSeJONuGTdVnp8M4kJ3drC/0WVHZ/zpe+zg+aO2t9WcTzY3Bb45BXy8sUQ5pqR6o0Ns1ueRbsOYM2E/9n9Qy2BbmjhosCC4pTzYSSXYO9bQRahLkbe91qy793y/rvtF8hdxGIfp4Ador7PY56mIUAMXIJ91fxdp/rSs9V+8N9Y2ockYQt0TuTkvJPRg0/tdG8t7G/139CyYlLZ269bRggrQbdRaMCPrFm6gBprYgyt36z6l64qxvi3xjEc7sNA8=
-    - secure: pioePC828QtIaQl97jLbGQAM1E3fW5a6QC3v5gpYiAOzF3E2FgbyX4TIrWdB8cle+oRp6Phkx9dCI/qV6xcHbTd9ZyfVL2ewaZh4jYHAnyGn3qGkT7U+cE+s0nbONrdeZozSS+OhCJ7jxifkToQiDZ03ZwzxuY4DGyYA/r9V65RIZkCwy7TmmgclKzawKM7NhBgjvSWwzoIBwgbcfgmNW8QJ5ltG/7kuKif/oXSc8roA1fGDmQm9KDa1UUeit7W76nOCogiY/JTu0znILviAxaMxLtB2fs16LuNo133VNNp+Y1fZFcA3orVm8ag7mlhRV5nwS7GhacF0ixCh8FSKR2opnVKD/cwtemwp88b91LGVrvNObEs4Jd4JX5WI0vWq8nQXAyyGugNmwg+48i5H/lUrdosCx/6mtwG86FWPOgIakicQdBTIWYrengvznDasyCDRZhkeu6IpEIhQHFNsSa44Aut18IMQTrIfJgYqTr0I6qX2lUpuodQT24u5Rlq2NjGnAgxYKfUzm11y6HR2w3cJiTYU2ZcLjv2EqnN+5s07bikKwRLaQIYS8UYzr/BvBm/Rs1Xbo270HtKoZwjbPRhA8vZ+qY/FZa5co/WFTb8WDq0IIEc6XsAhkx02ZZVBusyQHOANMnqUsZOF+Ht1ZLKgfFG/tJDpihtPn0QHqLE=
+  - CLOUDSDK_CORE_DISABLE_PROMPTS=1 # Do not prompt for user input when using any SDK methods.
+  - secure: ezpKZDYQUeBGDrLbwqgtw9mbI5ieh6DwytkQUHEhhWV9hB2Fs2QdNuLvZDCoNkdz0xoFJWNYqwHUlzkh92hhMJ+xgLJGqDhVzcWrv3jcpANzvHaJuatjtkvStYbj6G5Fyc6ws2qyOQWW4gWHC7IplEyVPeFWv0DpEScfKK0+DW9rxbV1cIqrNlRyyj2NcXNXBWzn1GzOzZptmNxRTl4YMQLV6u/EYGwNxy1BlAPlFfTbycNDGIqevXgpxPQWUYxra2QUYfABHK+8MZl+zAEHekWgW306EzGUiB4Vz2cKSLM/2ORHjki1kKD+mtaUmwNneqA+mAjMvuVmWRR5CF+x5oDB1P3MjEMJ9SRVcWBkStjLkFLf7J7yt56GkRNj2wc36j5QvwDOASDZCdlSfhYXDfGQi2fc9TYPOFCF4lV3wz+3dSeJONuGTdVnp8M4kJ3drC/0WVHZ/zpe+zg+aO2t9WcTzY3Bb45BXy8sUQ5pqR6o0Ns1ueRbsOYM2E/9n9Qy2BbmjhosCC4pTzYSSXYO9bQRahLkbe91qy793y/rvtF8hdxGIfp4Ador7PY56mIUAMXIJ91fxdp/rSs9V+8N9Y2ockYQt0TuTkvJPRg0/tdG8t7G/139CyYlLZ269bRggrQbdRaMCPrFm6gBprYgyt36z6l64qxvi3xjEc7sNA8=
+  - secure: pioePC828QtIaQl97jLbGQAM1E3fW5a6QC3v5gpYiAOzF3E2FgbyX4TIrWdB8cle+oRp6Phkx9dCI/qV6xcHbTd9ZyfVL2ewaZh4jYHAnyGn3qGkT7U+cE+s0nbONrdeZozSS+OhCJ7jxifkToQiDZ03ZwzxuY4DGyYA/r9V65RIZkCwy7TmmgclKzawKM7NhBgjvSWwzoIBwgbcfgmNW8QJ5ltG/7kuKif/oXSc8roA1fGDmQm9KDa1UUeit7W76nOCogiY/JTu0znILviAxaMxLtB2fs16LuNo133VNNp+Y1fZFcA3orVm8ag7mlhRV5nwS7GhacF0ixCh8FSKR2opnVKD/cwtemwp88b91LGVrvNObEs4Jd4JX5WI0vWq8nQXAyyGugNmwg+48i5H/lUrdosCx/6mtwG86FWPOgIakicQdBTIWYrengvznDasyCDRZhkeu6IpEIhQHFNsSa44Aut18IMQTrIfJgYqTr0I6qX2lUpuodQT24u5Rlq2NjGnAgxYKfUzm11y6HR2w3cJiTYU2ZcLjv2EqnN+5s07bikKwRLaQIYS8UYzr/BvBm/Rs1Xbo270HtKoZwjbPRhA8vZ+qY/FZa5co/WFTb8WDq0IIEc6XsAhkx02ZZVBusyQHOANMnqUsZOF+Ht1ZLKgfFG/tJDpihtPn0QHqLE=
+
+before_install:
+- openssl aes-256-cbc -K $encrypted_ba76cac20159_key -iv $encrypted_ba76cac20159_iv
+  -in gcloud-service-account-secret.json.enc -out gcloud-service-account-secret.json
+  -d
+
+script:
+- docker build -t miketrout/www.miketrout.dev .
+- echo "$DOCKER_HUB_PASSWORD" | docker login -u "$DOCKER_HUB_USERNAME" --password-stdin
+- docker push miketrout/www.miketrout.dev
+
+# Deploy  to Google Kubernetes Engine
+after_success:
+- if [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_BRANCH" == "master" ]; then ./deploy.sh; fi

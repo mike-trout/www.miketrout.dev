@@ -1,4 +1,4 @@
-FROM nginx:alpine
+FROM nginx
 COPY www.miketrout.dev.conf /etc/nginx/conf.d/
 COPY ./html /var/www/miketrout.dev/html/
 EXPOSE 80

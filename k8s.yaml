@@ -72,7 +72,6 @@ kind: Ingress
 metadata:
   name: www-miketrout-dev-ingress
   annotations:
-    kubernetes.io/ingress.allow-http: "false"
     kubernetes.io/ingress.global-static-ip-name: "www-miketrout-dev-static-ip"
     networking.gke.io/managed-certificates: "www-miketrout-dev-certificate"
 spec:

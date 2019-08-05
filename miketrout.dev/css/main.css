@@ -1,0 +1,40 @@
+body {
+    background-color: hsl(320, 100%, 96%);
+    color: rgba(0, 0, 0, 0.8);
+    font-family: Verdana, Arial, Serif;
+    font-size: 14px;
+  }
+  #main {
+    align-items: center;
+    background-color: hsl(320, 100%, 92%);
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    margin: 2em auto;
+    max-width: 50em;
+    padding: 1em;
+  }
+  #title {
+    font-size: 3em;
+  }
+  #img-div {
+    background-color: hsl(320, 100%, 94%);
+    border-radius: 0.5rem;
+    padding: 2em;
+  }
+  #image {
+    border-radius: 0.5rem;
+    display: block;
+    height: auto;
+    max-width: 100%;
+  }
+  #img-caption {
+    margin: 0.5em 0 -0.5em 0;
+  }
+  #tribute-info {
+    margin: 1em 0;
+  }
+  #tribute-info li {
+    margin: 0.3em 0;
+  }
+  

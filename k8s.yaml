@@ -8,6 +8,7 @@ metadata:
     tier: frontend
 spec:
   replicas: 3
+  revisionHistoryLimit: 1
   selector:
     matchLabels:
       app: www-miketrout-dev
@@ -27,13 +28,13 @@ spec:
               path: /
               port: 80
             initialDelaySeconds: 5
-            periodSeconds: 5
+            periodSeconds: 15
           readinessProbe:
             httpGet:
               path: /
               port: 80
             initialDelaySeconds: 5
-            periodSeconds: 5
+            periodSeconds: 15
           resources:
             requests:
               memory: 70Mi

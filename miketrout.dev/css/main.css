@@ -137,11 +137,8 @@ body {
 #contact-details-list li {
   padding: 0.25em 0;
 }
-#email-address::before {
-  content: "\2709";
-  padding-right: 0.75em;
-}
-#website-url::before {
-  content: "\1f30f";
-  padding-right: 0.75em;
+#contact-details-list a {
+  color: white;
+  padding-left: 0.5em;
+  text-decoration: none;
 }

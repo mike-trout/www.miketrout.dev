@@ -9,7 +9,8 @@ body {
   background-color: hsl(280, 80%, 94%);
   color: rgba(0, 0, 0, 0.75);
   font-size: 1rem;
-  margin: 5rem;
+  margin: 0;
+  padding: 0;
 }
 #main {
   background-color: hsl(280, 80%, 97%);
@@ -17,13 +18,13 @@ body {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap-reverse;
-  margin: 2rem auto;
-  max-width: 72rem;
-  min-width: 30rem;
+  margin: 5rem auto;
+  max-width: 70rem;
+  width: 90vw;
 }
 #left-content {
   display: flex;
-  flex: 1 1 50rem;
+  flex: 1 1 46rem;
   flex-direction: column;
   padding: 2rem;
 }

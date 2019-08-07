@@ -1,40 +1,143 @@
+:root {
+  font-family: Verdana, Arial, Serif;
+  font-size: 10pt;
+}
+* {
+  box-sizing: border-box;
+}
 body {
-    background-color: hsl(320, 100%, 96%);
-    color: rgba(0, 0, 0, 0.8);
-    font-family: Verdana, Arial, Serif;
-    font-size: 14px;
-  }
-  #main {
-    align-items: center;
-    background-color: hsl(320, 100%, 92%);
-    border-radius: 0.5rem;
-    display: flex;
-    flex-direction: column;
-    margin: 2em auto;
-    max-width: 50em;
-    padding: 1em;
-  }
-  #title {
-    font-size: 3em;
-  }
-  #img-div {
-    background-color: hsl(320, 100%, 94%);
-    border-radius: 0.5rem;
-    padding: 2em;
-  }
-  #image {
-    border-radius: 0.5rem;
-    display: block;
-    height: auto;
-    max-width: 100%;
-  }
-  #img-caption {
-    margin: 0.5em 0 -0.5em 0;
-  }
-  #tribute-info {
-    margin: 1em 0;
-  }
-  #tribute-info li {
-    margin: 0.3em 0;
-  }
-  
+  background-color: hsl(280, 80%, 94%);
+  color: rgba(0, 0, 0, 0.75);
+  font-size: 1rem;
+  margin: 5rem;
+}
+#main {
+  background-color: hsl(280, 80%, 97%);
+  box-shadow: 0.25rem 0.25rem 1rem 0 rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap-reverse;
+  margin: 2rem auto;
+  max-width: 72rem;
+}
+#left-content {
+  display: flex;
+  flex: 1 1 50rem;
+  flex-direction: column;
+  padding: 2rem;
+}
+.career-profile-placeholder {
+  background-color: rgba(0, 0, 0, 0.05);
+  height: 5rem;
+  width: 100%;
+}
+.experience-item-placeholder {
+  background-color: rgba(0, 0, 0, 0.02);
+  display: grid;
+  grid-column-gap: 0.5rem;
+  grid-row-gap: 0.5rem;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1.5rem 2rem 1fr;
+  margin: 1rem 0;
+  padding: 0.5rem;
+}
+.experience-item-placeholder-title {
+  background-color: rgba(0, 0, 0, 0.05);
+  height: 1.5rem;
+  justify-self: start;
+  width: 15rem;
+}
+.experience-item-placeholder-date {
+  background-color: rgba(0, 0, 255, 0.05);
+  justify-self: end;
+  height: 1.5rem;
+  width: 8rem;
+}
+.experience-item-placeholder-company {
+  background-color: rgba(0, 0, 255, 0.05);
+  justify-self: start;
+  height: 1.5rem;
+  width: 8rem;
+}
+.experience-item-placeholder-description {
+  background-color: rgba(0, 0, 0, 0.05);
+  grid-column: 1 / span 2;
+  grid-row: 3 / 3;
+  height: 10rem;
+}
+.projects-item-placeholder {
+  background-color: rgba(0, 0, 0, 0.02);
+  display: grid;
+  grid-row-gap: 0.5rem;
+  grid-template-columns: 1fr;
+  grid-template-rows: 2rem 1fr;
+  margin: 1rem 0;
+  padding: 0.5rem;
+}
+.projects-item-placeholder-title {
+  background-color: rgba(0, 0, 0, 0.05);
+  height: 1.5rem;
+  width: 20rem;
+}
+.projects-item-placeholder-description {
+  background-color: rgba(0, 0, 0, 0.05);
+  height: 5rem;
+}
+.skills-and-proficiency-placeholder {
+  background-color: rgba(0, 0, 0, 0.02);
+  display: grid;
+  grid-column-gap: 1rem;
+  grid-row-gap: 1rem;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: repeat(2rem);
+  padding: 0.5rem;
+}
+.skills-and-proficiency-placeholder-item-name {
+  background-color: rgba(0, 0, 0, 0.05);
+  height: 1.5rem;
+}
+.skills-and-proficiency-placeholder-item-detail {
+  background-color: rgba(0, 0, 255, 0.05);
+  height: 1.5rem;
+}
+#right-content {
+  background-color: hsl(280, 80%, 45%);
+  display: flex;
+  flex: 1 1 20rem;
+  flex-direction: column;
+}
+#profile {
+  align-items: center;
+  background-color: hsl(280, 80%, 20%);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+}
+#profile-picture {
+  padding: 1.5rem 3rem;
+}
+#profile-picture img {
+  border-radius: 50%;
+  max-width: 14rem;
+}
+#profile h1 {
+  margin: 0;
+}
+#contact-details-list {
+  color: white;
+  font-size: 1.2rem;
+  list-style: none;
+  padding: 1em 1.5em;
+}
+#contact-details-list li {
+  padding: 0.25em 0;
+}
+#email-address::before {
+  content: "\2709";
+  padding-right: 0.75em;
+}
+#website-url::before {
+  content: "\1f30f";
+  padding-right: 0.75em;
+}

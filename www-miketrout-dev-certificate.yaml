@@ -1,0 +1,8 @@
+---
+apiVersion: networking.gke.io/v1beta1
+kind: ManagedCertificate
+metadata:
+  name: www-miketrout-dev-certificate
+spec:
+  domains:
+    - www.miketrout.dev

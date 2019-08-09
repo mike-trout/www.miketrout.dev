@@ -11,7 +11,11 @@ gcloud components update kubectl
 
 gcloud auth activate-service-account --key-file gcloud-service-account-secret.json
 gcloud container clusters get-credentials gke-cluster --zone us-central1-a --project www-miketrout-dev
-kubectl apply -f k8s.yaml
+kubectl apply -f www-miketrout-dev-deployment.yaml \
+  www-miketrout-dev-service.yaml \
+  www-miketrout-dev-certificate.yaml \
+  www-miketrout-dev-ingress.yaml
 
 # https://github.com/kubernetes/kubernetes/issues/27081#issuecomment-238078103
-kubectl patch deployment www-miketrout-dev-deployment -p "{\"spec\":{\"template\":{\"metadata\":{\"labels\":{\"date\":\"`date +'%s'`\"}}}}}"
+kubectl patch deployment www-miketrout-dev-deployment \
+  -p "{\"spec\":{\"template\":{\"metadata\":{\"labels\":{\"date\":\"`date +'%s'`\"}}}}}"

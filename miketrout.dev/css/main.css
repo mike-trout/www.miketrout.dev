@@ -58,29 +58,35 @@ main {
   background-color: rgba(0, 0, 0, 0.02);
 }
 .experience-item__job-role {
-  height: 1.5rem;
   justify-self: start;
-  width: 15rem;
 }
 .experience-item__job-role--placeholder {
   background-color: rgba(0, 0, 0, 0.05);
+  height: 1.5rem;
+  width: 15rem;
 }
-.experience-item-placeholder-date-range {
-  background-color: rgba(0, 0, 255, 0.05);
+.experience-item__date-range {
   justify-self: end;
-  height: 1.5rem;
-  width: 8rem;
 }
-.experience-item-placeholder-employer {
+.experience-item__date-range--placeholder {
   background-color: rgba(0, 0, 255, 0.05);
-  justify-self: start;
   height: 1.5rem;
   width: 8rem;
 }
-.experience-item-placeholder-description {
-  background-color: rgba(0, 0, 0, 0.05);
+.experience-item__employer {
+  justify-self: start;
+}
+.experience-item__employer--placeholder {
+  background-color: rgba(0, 0, 255, 0.05);
+  height: 1.5rem;
+  width: 8rem;
+}
+.experience-item__description {
   grid-column: 1 / span 2;
   grid-row: 3 / 3;
+}
+.experience-item__description--placeholder {
+  background-color: rgba(0, 0, 0, 0.05);
   height: 10rem;
 }
 .projects-item-placeholder {

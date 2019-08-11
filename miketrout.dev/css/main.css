@@ -49,7 +49,7 @@ main {
   display: grid;
   grid-column-gap: 0.5rem;
   grid-row-gap: 0.5rem;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2fr 1fr;
   grid-template-rows: 1.5rem 2rem 1fr;
   margin-bottom: 1rem;
   padding: 0.5rem;
@@ -66,20 +66,20 @@ main {
   width: 15rem;
 }
 .experience-item__date-range {
-  color: hsl(280, 80%, 50%);
+  color: hsl(280, 80%, 45%);
   justify-self: end;
 }
 .experience-item__date-range--placeholder {
-  background-color: rgba(0, 0, 255, 0.05);
+  background-color: hsl(280, 80%, 95%);
   height: 1.5rem;
   width: 8rem;
 }
 .experience-item__employer {
-  color: hsl(280, 80%, 50%);
+  color: hsl(280, 80%, 45%);
   justify-self: start;
 }
 .experience-item__employer--placeholder {
-  background-color: rgba(0, 0, 255, 0.05);
+  background-color: hsl(280, 80%, 95%);
   height: 1.5rem;
   width: 8rem;
 }

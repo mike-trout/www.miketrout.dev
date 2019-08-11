@@ -45,7 +45,7 @@ main {
   color: rgba(0, 0, 0, 0.75);
   margin-bottom: 0.5em;
 }
-.experience__item {
+.experience-item {
   display: grid;
   grid-column-gap: 0.5rem;
   grid-row-gap: 0.5rem;
@@ -54,7 +54,7 @@ main {
   margin-bottom: 1rem;
   padding: 0.5rem;
 }
-.experience__item--placeholder {
+.experience-item--placeholder {
   background-color: rgba(0, 0, 0, 0.02);
 }
 .experience-item__job-role {

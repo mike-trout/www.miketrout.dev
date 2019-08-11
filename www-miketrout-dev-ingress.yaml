@@ -9,15 +9,15 @@ metadata:
 spec:
   backend:
     serviceName: www-miketrout-dev-service
-    servicePort: http
+    servicePort: 80
   rules:
   - http:
       paths:
       - path: /
         backend:
           serviceName: www-miketrout-dev-service
-          servicePort: http
+          servicePort: 80
       - path: /api/experience
         backend:
           serviceName: experience-service-service
-          servicePort: experience-service-port
+          servicePort: 60000

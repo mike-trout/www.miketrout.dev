@@ -12,7 +12,7 @@ body {
   margin: 0;
   padding: 0;
 }
-#main {
+main {
   background-color: hsl(280, 80%, 97%);
   box-shadow: 0.25rem 0.25rem 1rem 0 rgba(0, 0, 0, 0.5);
   display: flex;
@@ -28,34 +28,50 @@ body {
   flex-direction: column;
   padding: 2rem;
 }
-.career-profile-placeholder {
-  background-color: rgba(0, 0, 0, 0.05);
-  height: 5rem;
-  width: 100%;
+.career-profile {
+  margin-bottom: 1em;
 }
-.experience-item-placeholder {
-  background-color: rgba(0, 0, 0, 0.02);
+.career-profile__title {
+  color: rgba(0, 0, 0, 0.75);
+  margin-bottom: 0.5em;
+}
+.career-profile__content {
+  min-height: 5rem;
+}
+.career-profile__content--placeholder {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.experience__title {
+  color: rgba(0, 0, 0, 0.75);
+  margin-bottom: 0.5em;
+}
+.experience__item {
   display: grid;
   grid-column-gap: 0.5rem;
   grid-row-gap: 0.5rem;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1.5rem 2rem 1fr;
-  margin: 1rem 0;
+  margin-bottom: 1rem;
   padding: 0.5rem;
 }
-.experience-item-placeholder-title {
-  background-color: rgba(0, 0, 0, 0.05);
+.experience__item--placeholder {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+.experience-item__job-role {
   height: 1.5rem;
   justify-self: start;
   width: 15rem;
 }
-.experience-item-placeholder-date {
+.experience-item__job-role--placeholder {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.experience-item-placeholder-date-range {
   background-color: rgba(0, 0, 255, 0.05);
   justify-self: end;
   height: 1.5rem;
   width: 8rem;
 }
-.experience-item-placeholder-company {
+.experience-item-placeholder-employer {
   background-color: rgba(0, 0, 255, 0.05);
   justify-self: start;
   height: 1.5rem;

@@ -9,7 +9,7 @@ spec:
     app: www-miketrout-dev
     tier: frontend
   ports:
-    - name: service-port
+    - name: http
       protocol: TCP
       port: 80
       targetPort: 80

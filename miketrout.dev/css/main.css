@@ -124,7 +124,7 @@ main {
   padding: 0.5rem;
 }
 .projects-item-placeholder-title {
-  background-color: hsl(280, 80%, 20%);
+  background-color: hsla(280, 80%, 20%, 0.1);
   height: 1.5rem;
   width: 20rem;
 }

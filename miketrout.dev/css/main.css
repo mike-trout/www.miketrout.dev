@@ -59,20 +59,6 @@ main {
   margin: 1rem 0;
   padding: 0.5rem;
 }
-@media only screen and (max-width: 600px) {
-  .experience-item {
-    grid-template-columns: 1fr;
-    grid-template-rows: 2rem 1.5rem 2rem auto;
-    grid-template-areas:
-      "job-role"
-      "date-range"
-      "employer"
-      "description";
-  }
-  .experience-item__date-range {
-    justify-self: start;
-  }
-}
 .experience-item--placeholder {
   background-color: rgba(0, 0, 0, 0.02);
 }
@@ -111,6 +97,20 @@ main {
 .experience-item__description--placeholder {
   background-color: rgba(0, 0, 0, 0.05);
   height: 10rem;
+}
+@media only screen and (max-width: 600px) {
+  .experience-item {
+    grid-template-columns: 1fr;
+    grid-template-rows: 2rem 1.5rem 2rem auto;
+    grid-template-areas:
+      "job-role"
+      "date-range"
+      "employer"
+      "description";
+  }
+  .experience-item__date-range {
+    justify-self: start;
+  }
 }
 .projects-item-placeholder {
   background-color: rgba(0, 0, 0, 0.02);

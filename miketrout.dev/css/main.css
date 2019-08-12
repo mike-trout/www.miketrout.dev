@@ -62,12 +62,15 @@ main {
 @media only screen and (max-width: 600px) {
   .experience-item {
     grid-template-columns: 1fr;
-    grid-template-rows: 2rem 1.5rem 1.5rem auto;
+    grid-template-rows: 2rem 1.5rem 2rem auto;
     grid-template-areas:
       "job-role"
       "date-range"
       "employer"
       "description";
+  }
+  .experience-item__date-range {
+    justify-self: start;
   }
 }
 .experience-item--placeholder {

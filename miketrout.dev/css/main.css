@@ -6,7 +6,7 @@
   box-sizing: border-box;
 }
 body {
-  background-color: hsl(280, 80%, 94%);
+  background-color: hsl(280, 80%, 95%);
   color: rgba(0, 0, 0, 0.75);
   font-size: 1rem;
   margin: 0;
@@ -24,9 +24,10 @@ main {
 #left-content {
   background-color: hsl(280, 80%, 97%);
   display: flex;
-  flex: 1 1 46rem;
+  flex: 1 1 47rem;
   flex-direction: column;
-  padding: 2rem;
+  max-width: 90vw;
+  padding: 1.5rem;
 }
 .career-profile {
   margin-bottom: 1em;
@@ -123,7 +124,7 @@ main {
   height: 1.5rem;
 }
 .skills-and-proficiency-placeholder-item-detail {
-  background-color: rgba(0, 0, 255, 0.05);
+  background-color: hsl(280, 80%, 95%);
   height: 1.5rem;
 }
 #right-content {
@@ -131,6 +132,7 @@ main {
   display: flex;
   flex: 1 1 20rem;
   flex-direction: column;
+  max-width: 90vw;
 }
 #profile {
   align-items: center;
@@ -157,6 +159,7 @@ main {
   font-size: 1.2rem;
   list-style: none;
   padding: 1em 1.5em;
+  margin: 0;
 }
 #contact-details-list li {
   padding: 0.25em 0;

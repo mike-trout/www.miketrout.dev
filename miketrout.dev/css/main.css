@@ -19,14 +19,14 @@ main {
   flex-wrap: wrap-reverse;
   margin: 5rem auto;
   max-width: 960px;
-  width: 90vw;
+  width: 94vw;
 }
 #left-content {
   background-color: hsl(280, 80%, 97%);
   display: flex;
   flex: 1 1 720px;
   flex-direction: column;
-  max-width: 90vw;
+  max-width: 94vw;
   padding: 1.5rem;
 }
 .career-profile {
@@ -153,7 +153,7 @@ main {
   display: flex;
   flex: 1 1 240px;
   flex-direction: column;
-  max-width: 90vw;
+  max-width: 94vw;
 }
 #profile {
   align-items: center;

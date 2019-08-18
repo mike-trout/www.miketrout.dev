@@ -114,6 +114,9 @@ main {
     justify-self: start;
   }
 }
+.projects__title {
+  color: hsl(280, 80%, 20%);
+}
 .projects__item {
   display: grid;
   grid-row-gap: 0.5rem;
@@ -125,9 +128,11 @@ main {
 .projects__item--placeholder {
   background-color: rgba(0, 0, 0, 0.02);
 }
+.projects__title-title {
+  color: hsl(280, 80%, 20%);
+}
 .projects__item-title--placeholder {
   background-color: hsla(280, 80%, 20%, 0.1);
-  color: hsl(280, 80%, 20%);
   height: 1.5rem;
   width: 20rem;
 }

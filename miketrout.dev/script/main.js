@@ -1,26 +1,72 @@
-function reqListener() {
-  console.log(this.responseText);
-  var experience = JSON.parse(this.responseText);
-  var experienceItemsJobRole = document.getElementsByClassName('experience-item__job-role');
-  var experienceItemsDateRange = document.getElementsByClassName('experience-item__date-range');
-  var experienceItemsEmployer = document.getElementsByClassName('experience-item__employer');
-  var experienceItemsDescription = document.getElementsByClassName('experience-item__description');
-  var experienceItems = document.getElementsByClassName('experience-item');
-  for (var i = 0; i < experience.length; i++) {
-    experienceItemsJobRole[i].innerHTML = experience[i].jobRole;
-    experienceItemsDateRange[i].innerHTML = experience[i].dateRange;
-    experienceItemsEmployer[i].innerHTML = experience[i].employer;
-    experienceItemsDescription[i].innerHTML = experience[i].description;
-    experienceItemsJobRole[i].classList.remove('experience-item__job-role--placeholder');
-    experienceItemsDateRange[i].classList.remove('experience-item__date-range--placeholder');
-    experienceItemsEmployer[i].classList.remove('experience-item__employer--placeholder');
-    experienceItemsDescription[i].classList.remove('experience-item__description--placeholder');
-    experienceItems[i].classList.remove('experience-item--placeholder');
+function getExperience() {
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", "/api/experience", true);
+  xhr.onload = function (e) {
+    if (xhr.readyState === 4) {
+      if (xhr.status === 200) {
+        populateExperience(JSON.parse(xhr.responseText));
+      } else {
+        console.error(xhr.statusText);
+      }
+    }
+  };
+  xhr.onerror = function (e) {
+    console.error(xhr.statusText);
+  };
+  xhr.setRequestHeader('Accept', 'application/json');
+  xhr.send(null);
+}
+
+function getProjects() {
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", "/api/projects", true);
+  xhr.onload = function (e) {
+    if (xhr.readyState === 4) {
+      if (xhr.status === 200) {
+        populateProjects(JSON.parse(xhr.responseText));
+      } else {
+        console.error(xhr.statusText);
+      }
+    }
+  };
+  xhr.onerror = function (e) {
+    console.error(xhr.statusText);
+  };
+  xhr.setRequestHeader('Accept', 'application/json');
+  xhr.send(null);
+}
+
+function populateExperience(experienceJson) {
+  var experienceItemJobRoles = document.getElementsByClassName('experience__item-job-role');
+  var experienceItemDateRanges = document.getElementsByClassName('experience__item-date-range');
+  var experienceItemEmployers = document.getElementsByClassName('experience__item-employer');
+  var experienceItemDescriptions = document.getElementsByClassName('experience__item-description');
+  var experienceItems = document.getElementsByClassName('experience__item');
+  for (var i = 0; i < experienceJson.length; i++) {
+    experienceItemJobRoles[i].innerHTML = experienceJson[i].jobRole;
+    experienceItemDateRanges[i].innerHTML = experienceJson[i].dateRange;
+    experienceItemEmployers[i].innerHTML = experienceJson[i].employer;
+    experienceItemDescriptions[i].innerHTML = experienceJson[i].description;
+    experienceItemJobRoles[i].classList.remove('experience__item-job-role--placeholder');
+    experienceItemDateRanges[i].classList.remove('experience__item-date-range--placeholder');
+    experienceItemEmployers[i].classList.remove('experience__item-employer--placeholder');
+    experienceItemDescriptions[i].classList.remove('experience__item-description--placeholder');
+    experienceItems[i].classList.remove('experience__item--placeholder');
   }
 }
 
-var oReq = new XMLHttpRequest();
-oReq.addEventListener('load', reqListener);
-oReq.open('GET', '/api/experience');
-oReq.setRequestHeader('Accept', 'application/json');
-oReq.send();
+function populateProjects(projectsJson) {
+  var projectsItemNames = document.getElementsByClassName('projects__item-name');
+  var projectsItemDescriptions = document.getElementsByClassName('projects__item-description');
+  var projectsItems = document.getElementsByClassName('projects__item');
+  for (var i = 0; i < projectsJson.length; i++) {
+    projectsItemNames[i].innerHTML = projectsJson[i].name;
+    projectsItemDescriptions[i].innerHTML = projectsJson[i].description;
+    projectsItemNames[i].classList.remove('projects__item-name--placeholder');
+    projectsItemDescriptions[i].classList.remove('projects__item-description--placeholder');
+    projectsItems[i].classList.remove('projects__item--placeholder');
+  }
+}
+
+getExperience();
+getProjects();

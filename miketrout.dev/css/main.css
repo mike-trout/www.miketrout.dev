@@ -46,7 +46,7 @@ main {
   color: hsl(280, 80%, 20%);
   margin-bottom: 0.5em;
 }
-.experience-item {
+.experience__item {
   display: grid;
   grid-column-gap: 0.5rem;
   grid-row-gap: 0.5rem;
@@ -59,49 +59,49 @@ main {
   margin: 1rem 0;
   padding: 0.5rem;
 }
-.experience-item--placeholder {
+.experience__item--placeholder {
   background-color: rgba(0, 0, 0, 0.02);
 }
-.experience-item__job-role {
+.experience__item-job-role {
   color: hsl(280, 80%, 20%);
   font-weight: bold;
   grid-area: job-role;
   justify-self: start;
 }
-.experience-item__job-role--placeholder {
+.experience__item-job-role--placeholder {
   background-color: hsla(280, 80%, 20%, 0.1);
   height: 1.5rem;
   width: 20rem;
 }
-.experience-item__date-range {
+.experience__item-date-range {
   color: hsl(280, 80%, 45%);
   grid-area: date-range;
   justify-self: end;
 }
-.experience-item__date-range--placeholder {
+.experience__item-date-range--placeholder {
   background-color: hsla(280, 80%, 45%, 0.1);
   height: 1.5rem;
   width: 10rem;
 }
-.experience-item__employer {
+.experience__item-employer {
   color: hsl(280, 80%, 45%);
   grid-area: employer;
   justify-self: start;
 }
-.experience-item__employer--placeholder {
+.experience__item-employer--placeholder {
   background-color: hsla(280, 80%, 45%, 0.1);
   height: 1.5rem;
   width: 12rem;
 }
-.experience-item__description {
+.experience__item-description {
   grid-area: description;
 }
-.experience-item__description--placeholder {
+.experience__item-description--placeholder {
   background-color: rgba(0, 0, 0, 0.02);
   height: 10rem;
 }
 @media only screen and (max-width: 600px) {
-  .experience-item {
+  .experience__item {
     grid-template-columns: 1fr;
     grid-template-rows: 2rem 1.5rem 2rem auto;
     grid-template-areas:
@@ -110,7 +110,7 @@ main {
       "employer"
       "description";
   }
-  .experience-item__date-range {
+  .experience__item-date-range {
     justify-self: start;
   }
 }
@@ -131,7 +131,7 @@ main {
 .projects__title-title {
   color: hsl(280, 80%, 20%);
 }
-.projects__item-title--placeholder {
+.projects__item-name--placeholder {
   background-color: hsla(280, 80%, 20%, 0.1);
   height: 1.5rem;
   width: 20rem;

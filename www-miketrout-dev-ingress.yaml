@@ -21,3 +21,7 @@ spec:
         backend:
           serviceName: experience-service-service
           servicePort: 60000
+      - path: /api/projects
+        backend:
+          serviceName: projects-service-service
+          servicePort: 60001

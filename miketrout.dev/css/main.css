@@ -131,6 +131,10 @@ main {
 .projects__title-title {
   color: hsl(280, 80%, 20%);
 }
+.projects__item-name {
+  color: hsl(280, 80%, 20%);
+  font-weight: bold;
+}
 .projects__item-name--placeholder {
   background-color: hsla(280, 80%, 20%, 0.1);
   height: 1.5rem;

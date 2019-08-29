@@ -7,7 +7,6 @@
 }
 body {
   background-color: hsl(280, 80%, 93%);
-  color: rgba(0, 0, 0, 0.75);
   font-size: 1rem;
   margin: 0;
   padding: 0;
@@ -21,7 +20,7 @@ main {
   max-width: 960px;
   width: 94vw;
 }
-#left-content {
+.main-content {
   background-color: hsl(280, 80%, 97%);
   display: flex;
   flex: 1 1 720px;
@@ -30,11 +29,11 @@ main {
   padding: 1.5rem;
 }
 .career-profile {
-  margin-bottom: 1em;
+  margin: 0 0 1.5rem 0;
 }
 .career-profile__title {
   color: hsl(280, 80%, 20%);
-  margin-bottom: 0.5em;
+  margin: 1rem 0;
 }
 .career-profile__content {
   min-height: 5rem;
@@ -42,9 +41,12 @@ main {
 .career-profile__content--placeholder {
   background-color: rgba(0, 0, 0, 0.05);
 }
+.experience {
+  margin: 0 0 1.5rem 0;
+}
 .experience__title {
   color: hsl(280, 80%, 20%);
-  margin-bottom: 0.5em;
+  margin: 1rem 0;
 }
 .experience__item {
   display: grid;
@@ -114,8 +116,12 @@ main {
     justify-self: start;
   }
 }
+.projects {
+  margin: 0 0 1.5rem 0;
+}
 .projects__title {
   color: hsl(280, 80%, 20%);
+  margin: 1rem 0;
 }
 .projects__item {
   display: grid;
@@ -144,8 +150,14 @@ main {
   background-color: rgba(0, 0, 0, 0.05);
   height: 5rem;
 }
-.skills-and-proficiency-placeholder {
-  background-color: rgba(0, 0, 0, 0.02);
+.skills {
+  margin: 0 0 1.5rem 0;
+}
+.skills__title {
+  color: hsl(280, 80%, 20%);
+  margin: 1rem 0;
+}
+.skills__detail {
   display: grid;
   grid-column-gap: 1rem;
   grid-row-gap: 1rem;
@@ -154,52 +166,87 @@ main {
   margin: 1rem 0;
   padding: 0.5rem;
 }
-.skills-and-proficiency-placeholder-item-name {
+.skills__detail--placeholder {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+.skills__detail-item-name {
+  color: hsl(280, 80%, 20%);
+  font-weight: bold;
+  height: 1.5rem;
+}
+.skills__detail-item-name--placeholder {
   background-color: rgba(0, 0, 0, 0.05);
+}
+.skills__detail-item-score {
+  color: hsl(280, 80%, 45%);
   height: 1.5rem;
 }
-.skills-and-proficiency-placeholder-item-detail {
+.skills__detail-item-score--placeholder {
   background-color: hsl(280, 80%, 93%);
-  height: 1.5rem;
 }
-#right-content {
+.sidebar {
   background-color: hsl(280, 80%, 45%);
   display: flex;
   flex: 1 1 240px;
   flex-direction: column;
   max-width: 94vw;
 }
-#profile {
+.profile {
   align-items: center;
   background-color: hsl(280, 80%, 20%);
-  color: white;
   display: flex;
   flex-direction: column;
   padding: 1rem 0;
 }
-#profile-picture {
+.profile__picture {
   padding: 1.5rem 0;
 }
-#profile-picture img {
+.profile__picture img {
   border-radius: 50%;
   height: 160px;
   object-fit: cover;
   width: 160px;
 }
-#profile h1 {
+.profile__name {
+  color: white;
   margin: 0;
 }
-#contact-details-list {
-  color: white;
+.profile__job-role {
+  color: rgba(255, 255, 255, 0.7);
+}
+.contact-details {
   list-style: none;
-  padding: 1em 1.5em;
+  padding: 1rem 1.5rem;
   margin: 0;
 }
-#contact-details-list li {
-  padding: 0.25em 0;
-}
-#contact-details-list a {
+.contact-details li {
   color: white;
-  padding-left: 0.5em;
+  padding: 0.25rem 0;
+}
+.contact-details a {
+  color: white !important;
+  padding-left: 0.5rem;
   text-decoration: none;
+}
+.contact-details a:hover {
+  text-decoration: underline;
+}
+.education {
+  padding: 1rem 1.5rem;
+}
+.education__title {
+  color: white;
+  margin: 0 0 1rem 0;
+}
+.education__qualification {
+  color: white;
+  margin: 0 0 0.5rem 0;
+}
+.education__establishment {
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 0 0.5rem 0;
+}
+.education__date-range {
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 0 0.5rem 0;
 }

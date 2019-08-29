@@ -1,5 +1,5 @@
 :root {
-  font-family: Verdana, Arial, Serif;
+  font-family: Verdana, Arial, sans-serif;
   font-size: 10pt;
 }
 * {
@@ -29,20 +29,21 @@ main {
   padding: 1.5rem;
 }
 .career-profile {
-  margin: 0 0 1.5rem 0;
+  margin: 0;
 }
 .career-profile__title {
   color: hsl(280, 80%, 20%);
   margin: 1rem 0;
 }
 .career-profile__content {
+  margin: 1rem 0;
   min-height: 5rem;
 }
 .career-profile__content--placeholder {
   background-color: rgba(0, 0, 0, 0.05);
 }
 .experience {
-  margin: 0 0 1.5rem 0;
+  margin: 0;
 }
 .experience__title {
   color: hsl(280, 80%, 20%);
@@ -53,16 +54,16 @@ main {
   grid-column-gap: 0.5rem;
   grid-row-gap: 0.5rem;
   grid-template-columns: 2fr 1fr;
-  grid-template-rows: 1.5rem 2rem auto;
+  grid-template-rows: auto 2rem 1fr;
   grid-template-areas:
     "job-role date-range"
     "employer employer"
     "description description";
   margin: 1rem 0;
-  padding: 0.5rem;
 }
 .experience__item--placeholder {
   background-color: rgba(0, 0, 0, 0.02);
+  padding: 0.5rem;
 }
 .experience__item-job-role {
   color: hsl(280, 80%, 20%);
@@ -97,15 +98,19 @@ main {
 }
 .experience__item-description {
   grid-area: description;
+  text-align: justify;
+}
+.experience__item-description p {
+  margin: 0 0 1em 0;
 }
 .experience__item-description--placeholder {
-  background-color: rgba(0, 0, 0, 0.02);
+  background-color: rgba(0, 0, 0, 0.03);
   height: 10rem;
 }
 @media only screen and (max-width: 600px) {
   .experience__item {
     grid-template-columns: 1fr;
-    grid-template-rows: 2rem 1.5rem 2rem auto;
+    grid-template-rows: 2rem auto 2rem 1fr;
     grid-template-areas:
       "job-role"
       "date-range"
@@ -117,7 +122,7 @@ main {
   }
 }
 .projects {
-  margin: 0 0 1.5rem 0;
+  margin: 0;
 }
 .projects__title {
   color: hsl(280, 80%, 20%);
@@ -129,10 +134,10 @@ main {
   grid-template-columns: 1fr;
   grid-template-rows: 2rem auto;
   margin: 1rem 0;
-  padding: 0.5rem;
 }
 .projects__item--placeholder {
   background-color: rgba(0, 0, 0, 0.02);
+  padding: 0.5rem;
 }
 .projects__title-title {
   color: hsl(280, 80%, 20%);
@@ -147,11 +152,11 @@ main {
   width: 20rem;
 }
 .projects__item-description--placeholder {
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: rgba(0, 0, 0, 0.03);
   height: 5rem;
 }
 .skills {
-  margin: 0 0 1.5rem 0;
+  margin: 0;
 }
 .skills__title {
   color: hsl(280, 80%, 20%);
@@ -164,10 +169,10 @@ main {
   grid-template-columns: 1fr 3fr;
   grid-template-rows: repeat(2rem);
   margin: 1rem 0;
-  padding: 0.5rem;
 }
 .skills__detail--placeholder {
   background-color: rgba(0, 0, 0, 0.02);
+  padding: 0.5rem;
 }
 .skills__detail-item-name {
   color: hsl(280, 80%, 20%);
@@ -175,7 +180,7 @@ main {
   height: 1.5rem;
 }
 .skills__detail-item-name--placeholder {
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: rgba(0, 0, 0, 0.03);
 }
 .skills__detail-item-score {
   color: hsl(280, 80%, 45%);
@@ -212,7 +217,7 @@ main {
   margin: 0;
 }
 .profile__job-role {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.8);
 }
 .contact-details {
   list-style: none;
@@ -243,10 +248,10 @@ main {
   margin: 0 0 0.5rem 0;
 }
 .education__establishment {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.8);
   margin: 0 0 0.5rem 0;
 }
 .education__date-range {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.8);
   margin: 0 0 0.5rem 0;
 }

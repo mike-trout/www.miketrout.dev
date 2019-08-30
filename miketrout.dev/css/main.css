@@ -29,14 +29,13 @@ main {
   padding: 1.5rem;
 }
 .career-profile {
-  margin: 0;
+  margin: 0 0 1rem 0;
 }
 .career-profile__title {
   color: hsl(280, 80%, 20%);
   margin: 1rem 0;
 }
 .career-profile__content {
-  margin: 1rem 0;
   min-height: 5rem;
 }
 .career-profile__content--placeholder {
@@ -59,10 +58,11 @@ main {
     "job-role date-range"
     "employer employer"
     "description description";
-  margin: 1rem 0;
+  padding: 1rem 0;
 }
 .experience__item--placeholder {
   background-color: rgba(0, 0, 0, 0.02);
+  margin: 1rem 0;
   padding: 0.5rem;
 }
 .experience__item-job-role {
@@ -133,10 +133,11 @@ main {
   grid-row-gap: 0.5rem;
   grid-template-columns: 1fr;
   grid-template-rows: 2rem auto;
-  margin: 1rem 0;
+  padding: 1rem 0;
 }
 .projects__item--placeholder {
   background-color: rgba(0, 0, 0, 0.02);
+  margin: 1rem 0;
   padding: 0.5rem;
 }
 .projects__title-title {
@@ -168,7 +169,6 @@ main {
   grid-row-gap: 1rem;
   grid-template-columns: 1fr 3fr;
   grid-template-rows: repeat(2rem);
-  margin: 1rem 0;
 }
 .skills__detail--placeholder {
   background-color: rgba(0, 0, 0, 0.02);

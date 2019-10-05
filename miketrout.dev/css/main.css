@@ -53,23 +53,31 @@ main {
   grid-column-gap: 0.5rem;
   grid-row-gap: 0.5rem;
   grid-template-columns: 2fr 1fr;
-  grid-template-rows: auto 2rem 1fr;
+  grid-template-rows: auto auto 0.5rem 1fr;
   grid-template-areas:
     "job-role date-range"
     "employer employer"
+    ". ."
     "description description";
-  padding: 1rem 0;
+  margin: 1rem 0;
+  padding: 0.5rem;
+  transition-delay: 250ms;
+  transition-duration: 500ms;
+  transition-property: background-color;
+  transition-timing-function: ease-in;
 }
 .experience__item--placeholder {
   background-color: rgba(0, 0, 0, 0.02);
-  margin: 1rem 0;
-  padding: 0.5rem;
 }
 .experience__item-job-role {
   color: hsl(280, 80%, 20%);
   font-weight: bold;
   grid-area: job-role;
   justify-self: start;
+  transition-delay: 250ms;
+  transition-duration: 500ms;
+  transition-property: background-color, color;
+  transition-timing-function: ease-in;
 }
 .experience__item-job-role--placeholder {
   background-color: hsla(280, 80%, 20%, 0.1);
@@ -80,6 +88,10 @@ main {
   color: hsl(280, 80%, 45%);
   grid-area: date-range;
   justify-self: end;
+  transition-delay: 250ms;
+  transition-duration: 500ms;
+  transition-property: background-color, color;
+  transition-timing-function: ease-in;
 }
 .experience__item-date-range--placeholder {
   background-color: hsla(280, 80%, 45%, 0.1);
@@ -90,6 +102,10 @@ main {
   color: hsl(280, 80%, 45%);
   grid-area: employer;
   justify-self: start;
+  transition-delay: 250ms;
+  transition-duration: 500ms;
+  transition-property: background-color, color;
+  transition-timing-function: ease-in;
 }
 .experience__item-employer--placeholder {
   background-color: hsla(280, 80%, 45%, 0.1);
@@ -97,8 +113,15 @@ main {
   width: 12rem;
 }
 .experience__item-description {
+  color: black;
   grid-area: description;
+  max-height: 30rem;
+  overflow: hidden;
   text-align: justify;
+  transition-delay: 250ms;
+  transition-duration: 500ms;
+  transition-property: background-color, color, max-height;
+  transition-timing-function: ease-in;
 }
 .experience__item-description p {
   margin: 0 0 1em 0;
@@ -106,15 +129,18 @@ main {
 .experience__item-description--placeholder {
   background-color: rgba(0, 0, 0, 0.03);
   height: 10rem;
+  max-height: 10rem;
 }
 @media only screen and (max-width: 600px) {
   .experience__item {
     grid-template-columns: 1fr;
-    grid-template-rows: 2rem auto 2rem 1fr;
+    grid-template-rows: auto 0.5rem auto auto 0.5rem 1fr;
     grid-template-areas:
       "job-role"
+      "."
       "date-range"
       "employer"
+      "."
       "description";
   }
   .experience__item-date-range {
@@ -133,12 +159,11 @@ main {
   grid-row-gap: 0.5rem;
   grid-template-columns: 1fr;
   grid-template-rows: 2rem auto;
-  padding: 1rem 0;
+  margin: 1rem 0;
+  padding: 0.5rem;
 }
 .projects__item--placeholder {
   background-color: rgba(0, 0, 0, 0.02);
-  margin: 1rem 0;
-  padding: 0.5rem;
 }
 .projects__title-title {
   color: hsl(280, 80%, 20%);
@@ -157,7 +182,7 @@ main {
   height: 5rem;
 }
 .skills {
-  margin: 0;
+  margin: 0 0 1rem 0;
 }
 .skills__title {
   color: hsl(280, 80%, 20%);
@@ -183,7 +208,7 @@ main {
   background-color: rgba(0, 0, 0, 0.03);
 }
 .skills__detail-item-score {
-  color: hsl(280, 80%, 45%);
+  background-color: hsl(280, 80%, 45%);
   height: 1.5rem;
 }
 .skills__detail-item-score--placeholder {

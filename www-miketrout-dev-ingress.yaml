@@ -10,18 +10,3 @@ spec:
   backend:
     serviceName: www-miketrout-dev-service
     servicePort: 80
-  rules:
-  - http:
-      paths:
-      - path: /
-        backend:
-          serviceName: www-miketrout-dev-service
-          servicePort: 80
-      - path: /api/experience
-        backend:
-          serviceName: experience-service-service
-          servicePort: 60000
-      - path: /api/projects
-        backend:
-          serviceName: projects-service-service
-          servicePort: 60001

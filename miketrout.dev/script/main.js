@@ -2,7 +2,7 @@
 
 function getExperience() {
   var xhr = new XMLHttpRequest();
-  xhr.open('GET', 'https://api.miketrout.dev/experience', true);
+  xhr.open('GET', 'https://api.miketrout.dev/experience/', true);
   xhr.onload = function (e) {
     if (xhr.readyState === 4) {
       if (xhr.status === 200) {
@@ -25,7 +25,7 @@ function getExperience() {
 
 function getProjects() {
   var xhr = new XMLHttpRequest();
-  xhr.open('GET', 'https://api.miketrout.dev/projects', true);
+  xhr.open('GET', 'https://api.miketrout.dev/projects/', true);
   xhr.onload = function (e) {
     if (xhr.readyState === 4) {
       if (xhr.status === 200) {
@@ -48,7 +48,7 @@ function getProjects() {
 
 function getSkills() {
   var xhr = new XMLHttpRequest();
-  xhr.open('GET', 'https://api.miketrout.dev/skills', true);
+  xhr.open('GET', 'https://api.miketrout.dev/skills/', true);
   xhr.onload = function (e) {
     if (xhr.readyState === 4) {
       if (xhr.status === 200) {

@@ -2,7 +2,7 @@
 
 function getExperience() {
   var xhr = new XMLHttpRequest();
-  xhr.open("GET", "/api/experience", true);
+  xhr.open('GET', 'https://api.miketrout.dev/experience', true);
   xhr.onload = function (e) {
     if (xhr.readyState === 4) {
       if (xhr.status === 200) {
@@ -16,16 +16,16 @@ function getExperience() {
     console.error(xhr.statusText);
   };
   xhr.ontimeout = function () {
-    console.error("The request to the experience service timed out.");
+    console.error('The request to the experience service timed out.');
   };
   xhr.setRequestHeader('Accept', 'application/json');
   xhr.timeout = 2000;
-  xhr.send(null);
+  xhr.send();
 }
 
 function getProjects() {
   var xhr = new XMLHttpRequest();
-  xhr.open("GET", "/api/projects", true);
+  xhr.open('GET', 'https://api.miketrout.dev/projects', true);
   xhr.onload = function (e) {
     if (xhr.readyState === 4) {
       if (xhr.status === 200) {
@@ -39,11 +39,34 @@ function getProjects() {
     console.error(xhr.statusText);
   };
   xhr.ontimeout = function () {
-    console.error("The request to the projects service timed out.");
+    console.error('The request to the projects service timed out.');
   };
   xhr.setRequestHeader('Accept', 'application/json');
   xhr.timeout = 2000;
-  xhr.send(null);
+  xhr.send();
+}
+
+function getSkills() {
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', 'https://api.miketrout.dev/skills', true);
+  xhr.onload = function (e) {
+    if (xhr.readyState === 4) {
+      if (xhr.status === 200) {
+        displaySkills(JSON.parse(xhr.responseText));
+      } else {
+        console.error(xhr.statusText);
+      }
+    }
+  };
+  xhr.onerror = function (e) {
+    console.error(xhr.statusText);
+  }
+  xhr.ontimeout = function () {
+    console.error('The request to the skills service timed out.');
+  }
+  xhr.setRequestHeader('Accept', 'application/json');
+  xhr.timeout = 2000;
+  xhr.send();
 }
 
 function displayExperience(experience) {
@@ -102,7 +125,45 @@ function displayProjects(projects) {
   }
 }
 
+function displaySkills(skills) {
+  var skillNamePlaceholders = document.getElementsByClassName('skills__detail-item-name--placeholder');
+  var numPlaceholders = skillNamePlaceholders.length;
+  var numSkills = skills.length;
+  if (numPlaceholders > numSkills) {
+    for (var i = 0; i < numPlaceholders - numSkills; i++) {
+      skillNamePlaceholders[0].parentElement.removeChild(skillNamePlaceholders[0]);
+    }
+  } else if (numPlaceholders < numSkills) {
+    for (var i = 0; i < numSkills - numPlaceholders; i++) {
+      skillNamePlaceholders[0].parentElement.appendChild(skillNamePlaceholders[0].cloneNode(true));
+    }
+  }
+  var skillLevelPlaceholders = document.getElementsByClassName('skills__detail-item-score--placeholder');
+  numPlaceholders = skillLevelPlaceholders.length;
+  if (numPlaceholders > numSkills) {
+    for (var i = 0; i < numPlaceholders - numSkills; i++) {
+      skillLevelPlaceholders[0].parentElement.removeChild(skillLevelPlaceholders[0]);
+    }
+  } else if (numPlaceholders < numSkills) {
+    for (var i = 0; i < numSkills - numPlaceholders; i++) {
+      skillLevelPlaceholders[0].parentElement.appendChild(skillLevelPlaceholders[0].cloneNode(true));
+    }
+  }
+  var skillNames = document.getElementsByClassName('skills__detail-item-name');
+  for (var i = 0; i < numSkills; i++) {
+    skillNames[i].innerHTML = skills[i].name;
+    skillNames[i].classList.remove('skills__detail-item-name--placeholder');
+  }
+  var skillLevels = document.getElementsByClassName('skills__detail-item-score');
+  for (var i = 0; i < numSkills; i++) {
+    skillLevels[i].style.width = skills[i].level + '0%';
+    skillLevels[i].classList.remove('skills__detail-item-score--placeholder');
+  }
+  document.getElementsByClassName('skills__detail--placeholder')[0].classList.remove('skills__detail--placeholder');
+}
+
 document.body.onload = function () {
   getExperience();
   getProjects();
+  getSkills();
 }

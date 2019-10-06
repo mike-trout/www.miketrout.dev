@@ -162,28 +162,52 @@ main {
   display: grid;
   grid-row-gap: 0.5rem;
   grid-template-columns: 1fr;
-  grid-template-rows: 2rem auto;
+  grid-template-rows: auto 0.5rem auto;
+  grid-template-areas:
+    "name"
+    "."
+    "description";
   margin: 1rem 0;
   padding: 0.5rem;
+  transition-delay: 250ms;
+  transition-duration: 500ms;
+  transition-property: background-color;
+  transition-timing-function: ease-in;
 }
 .projects__item--placeholder {
   background-color: rgba(0, 0, 0, 0.02);
 }
-.projects__title-title {
-  color: hsl(280, 80%, 20%);
-}
 .projects__item-name {
   color: hsl(280, 80%, 20%);
   font-weight: bold;
+  grid-area: name;
+  transition-delay: 250ms;
+  transition-duration: 500ms;
+  transition-property: background-color, color;
+  transition-timing-function: ease-in;
 }
 .projects__item-name--placeholder {
   background-color: hsla(280, 80%, 20%, 0.1);
+  color: transparent;
   height: 1.5rem;
   width: 20rem;
 }
+.projects__item-description {
+  color: black;
+  grid-area: description;
+  max-height: 30rem;
+  overflow: hidden;
+  text-align: justify;
+  transition-delay: 250ms;
+  transition-duration: 500ms;
+  transition-property: background-color, color, max-height;
+  transition-timing-function: ease-in;
+}
 .projects__item-description--placeholder {
   background-color: rgba(0, 0, 0, 0.03);
+  color: transparent;
   height: 5rem;
+  max-height: 5rem;
 }
 .skills {
   margin: 0 0 1rem 0;

@@ -81,6 +81,7 @@ main {
 }
 .experience__item-job-role--placeholder {
   background-color: hsla(280, 80%, 20%, 0.1);
+  color: transparent;
   height: 1.5rem;
   width: 20rem;
 }
@@ -95,6 +96,7 @@ main {
 }
 .experience__item-date-range--placeholder {
   background-color: hsla(280, 80%, 45%, 0.1);
+  color: transparent;
   height: 1.5rem;
   width: 10rem;
 }
@@ -109,6 +111,7 @@ main {
 }
 .experience__item-employer--placeholder {
   background-color: hsla(280, 80%, 45%, 0.1);
+  color: transparent;
   height: 1.5rem;
   width: 12rem;
 }
@@ -128,6 +131,7 @@ main {
 }
 .experience__item-description--placeholder {
   background-color: rgba(0, 0, 0, 0.03);
+  color: transparent;
   height: 10rem;
   max-height: 10rem;
 }

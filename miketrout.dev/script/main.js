@@ -1,21 +1,99 @@
 'use strict';
 
-function getExperience() {
+// Create the placeholders for the experience items
+function createExperienceItemPlaceholders(count) {
+  // Get the experience container div
+  var experienceDiv = document.getElementsByClassName('experience')[0];
+  // Create the number of placeholders specified by count
+  for (var i = 0; i < count; i++) {
+    // Create the experience item div
+    var experienceItemDiv = document.createElement('div');
+    experienceItemDiv.classList.add(
+      'experience__item',
+      'experience__item--placeholder'
+    );
+    // Create the experience item job role div and append to the
+    // experience item div
+    var experienceItemJobRoleDiv = document.createElement('div');
+    experienceItemJobRoleDiv.classList.add(
+      'experience__item-job-role',
+      'experience__item-job-role--placeholder'
+    );
+    experienceItemDiv.appendChild(experienceItemJobRoleDiv);
+    // Create the experience item date range div and append to the
+    // experience item div
+    var experienceItemDateRangeDiv = document.createElement('div');
+    experienceItemDateRangeDiv.classList.add(
+      'experience__item-date-range',
+      'experience__item-date-range--placeholder'
+    );
+    experienceItemDiv.appendChild(experienceItemDateRangeDiv);
+    // Create the experience item employer div and append to the
+    // experience item div
+    var experienceItemEmployerDiv = document.createElement('div');
+    experienceItemEmployerDiv.classList.add(
+      'experience__item-employer',
+      'experience__item-employer--placeholder'
+    );
+    experienceItemDiv.appendChild(experienceItemEmployerDiv);
+    // Create the experience item description div and append to the
+    // experience item div
+    var experienceItemDescriptionDiv = document.createElement('div');
+    experienceItemDescriptionDiv.classList.add(
+      'experience__item-description',
+      'experience__item-description--placeholder'
+    );
+    experienceItemDiv.appendChild(experienceItemDescriptionDiv);
+    // Add the experience item div to the experience container div
+    experienceDiv.appendChild(experienceItemDiv);
+  }
+}
+
+// Get experience resource from the specified URL
+function getExperience(url) {
   var xhr = new XMLHttpRequest();
-  xhr.open('GET', 'https://api.miketrout.dev/experience/', true);
-  xhr.onload = function (e) {
+  xhr.open('GET', url, true);
+  xhr.onload = function () {
     if (xhr.readyState === 4) {
       if (xhr.status === 200) {
-        displayExperience(JSON.parse(xhr.responseText));
+        var experience = JSON.parse(xhr.responseText);
+        createExperienceItemPlaceholders(experience.count);
+        for (var i = 0; i < parseInt(experience.count); i++) {
+          getExperienceItem(experience.items[i], i);
+        }
       } else {
         console.error(xhr.statusText);
       }
     }
   };
   xhr.onerror = function (e) {
-    console.error(xhr.statusText);
+    console.error(e);
   };
   xhr.ontimeout = function () {
+    console.error('The request to the experience service timed out.');
+  };
+  xhr.setRequestHeader('Accept', 'application/json');
+  xhr.timeout = 2000;
+  xhr.send();
+}
+
+function getExperienceItem(url, index) {
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', url, true);
+  xhr.onload = function () {
+    if (xhr.readyState === 4) {
+      if (xhr.status === 200) {
+        var experienceItem = JSON.parse(xhr.responseText);
+        displayExperienceItem(experienceItem, index);
+      } else {
+        console.error(xhr.statusText);
+      }
+    }
+  };
+  xhr.onerror = function (e) {
+    console.error(e);
+  };
+  console.ontimeout = function () {
     console.error('The request to the experience service timed out.');
   };
   xhr.setRequestHeader('Accept', 'application/json');
@@ -69,35 +147,21 @@ function getSkills() {
   xhr.send();
 }
 
-function displayExperience(experience) {
-  var experienceItemPlaceholders = document.getElementsByClassName('experience__item--placeholder');
-  var numPlaceholders = experienceItemPlaceholders.length;
-  var numExperience = experience.length;
-  if (numPlaceholders > numExperience) {
-    for (var i = 0; i < numPlaceholders - numExperience; i++) {
-      experienceItemPlaceholders[0].parentElement.removeChild(experienceItemPlaceholders[0]);
-    }
-  } else if (numPlaceholders < numExperience) {
-    for (var i = 0; i < numExperience - numPlaceholders; i++) {
-      experienceItemPlaceholders[0].parentElement.appendChild(experienceItemPlaceholders[0].cloneNode(true));
-    }
-  }
-  var experienceItemJobRoles = document.getElementsByClassName('experience__item-job-role');
-  var experienceItemDateRanges = document.getElementsByClassName('experience__item-date-range');
-  var experienceItemEmployers = document.getElementsByClassName('experience__item-employer');
-  var experienceItemDescriptions = document.getElementsByClassName('experience__item-description');
-  var experienceItems = document.getElementsByClassName('experience__item');
-  for (var i = 0; i < numExperience; i++) {
-    experienceItemJobRoles[i].innerHTML = experience[i].jobRole;
-    experienceItemDateRanges[i].innerHTML = experience[i].dateRange;
-    experienceItemEmployers[i].innerHTML = experience[i].employer;
-    experienceItemDescriptions[i].innerHTML = experience[i].description;
-    experienceItemJobRoles[i].classList.remove('experience__item-job-role--placeholder');
-    experienceItemDateRanges[i].classList.remove('experience__item-date-range--placeholder');
-    experienceItemEmployers[i].classList.remove('experience__item-employer--placeholder');
-    experienceItemDescriptions[i].classList.remove('experience__item-description--placeholder');
-    experienceItems[i].classList.remove('experience__item--placeholder');
-  }
+function displayExperienceItem(experienceItem, index) {
+  var experienceItemContainer = document.getElementsByClassName('experience__item')[index];
+  var experienceItemJobRole = document.getElementsByClassName('experience__item-job-role')[index];
+  experienceItemJobRole.innerHTML = experienceItem.jobRole;
+  experienceItemJobRole.classList.remove('experience__item-job-role--placeholder');
+  var experienceItemDateRange = document.getElementsByClassName('experience__item-date-range')[index];
+  experienceItemDateRange.innerHTML = experienceItem.dateRange;
+  experienceItemDateRange.classList.remove('experience__item-date-range--placeholder');
+  var experienceItemEmployer = document.getElementsByClassName('experience__item-employer')[index];
+  experienceItemEmployer.innerHTML = experienceItem.employer;
+  experienceItemEmployer.classList.remove('experience__item-employer--placeholder');
+  var experienceItemDescription = document.getElementsByClassName('experience__item-description')[index];
+  experienceItemDescription.innerHTML = experienceItem.description;
+  experienceItemDescription.classList.remove('experience__item-description--placeholder');
+  experienceItemContainer.classList.remove('experience__item--placeholder');
 }
 
 function displayProjects(projects) {
@@ -163,7 +227,7 @@ function displaySkills(skills) {
 }
 
 document.body.onload = function () {
-  getExperience();
+  getExperience('https://api.miketrout.dev/experience/');
   getProjects();
   getSkills();
 }

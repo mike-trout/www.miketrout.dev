@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,15 +20,17 @@
                 <h1 class="career-profile__title">Career Profile</h1>
                 <div class="career-profile__content career-profile__content--placeholder"></div>
             </div>
-            <div class="experience">
+            <div id="experience" class="experience">
                 <h1 class="experience__title">Experience</h1>
-            </div>
-            <div class="projects">
-                <h1 class="projects__title">Projects</h1>
-                <div class="projects__item projects__item--placeholder">
-                    <div class="projects__item-name projects__item-name--placeholder"></div>
-                    <div class="projects__item-description projects__item-description--placeholder"></div>
+                <div class="experience__item experience__item--placeholder">
+                    <div class="experience__item-job-role experience__item-job-role--placeholder"></div>
+                    <div class="experience__item-date-range experience__item-date-range--placeholder"></div>
+                    <div class="experience__item-employer experience__item-employer--placeholder"></div>
+                    <div class="experience__item-description experience__item-description--placeholder"></div>
                 </div>
+            </div>
+            <div id="projects" class="projects">
+                <h1 class="projects__title">Projects</h1>
                 <div class="projects__item projects__item--placeholder">
                     <div class="projects__item-name projects__item-name--placeholder"></div>
                     <div class="projects__item-description projects__item-description--placeholder"></div>
@@ -36,23 +38,25 @@
             </div>
             <div class="skills">
                 <h1 class="skills__title">Skills</h1>
-                <div class="skills__detail skills__detail--placeholder">
-                    <div class="skills__detail-item-name skills__detail-item-name--placeholder"></div>
-                    <div class="skills__detail-item-score skills__detail-item-score--placeholder"></div>
-                    <div class="skills__detail-item-name skills__detail-item-name--placeholder"></div>
-                    <div class="skills__detail-item-score skills__detail-item-score--placeholder"></div>
-                    <div class="skills__detail-item-name skills__detail-item-name--placeholder"></div>
-                    <div class="skills__detail-item-score skills__detail-item-score--placeholder"></div>
-                    <div class="skills__detail-item-name skills__detail-item-name--placeholder"></div>
-                    <div class="skills__detail-item-score skills__detail-item-score--placeholder"></div>
-                    <div class="skills__detail-item-name skills__detail-item-name--placeholder"></div>
-                    <div class="skills__detail-item-score skills__detail-item-score--placeholder"></div>
-                    <div class="skills__detail-item-name skills__detail-item-name--placeholder"></div>
-                    <div class="skills__detail-item-score skills__detail-item-score--placeholder"></div>
-                    <div class="skills__detail-item-name skills__detail-item-name--placeholder"></div>
-                    <div class="skills__detail-item-score skills__detail-item-score--placeholder"></div>
-                    <div class="skills__detail-item-name skills__detail-item-name--placeholder"></div>
-                    <div class="skills__detail-item-score skills__detail-item-score--placeholder"></div>
+                <div id="skills-detail" class="skills__detail skills__detail--placeholder">
+                    <div class="skills__detail-item">
+                        <div class="skills__detail-item-name skills__detail-item-name--placeholder"></div>
+                        <div class="skills__detail-item-score">
+                            <div class="skills__detail-item-score-bar skills__detail-item-score-bar--placeholder"></div>
+                        </div>
+                    </div>
+                    <div class="skills__detail-item">
+                        <div class="skills__detail-item-name skills__detail-item-name--placeholder"></div>
+                        <div class="skills__detail-item-score">
+                            <div class="skills__detail-item-score-bar skills__detail-item-score-bar--placeholder"></div>
+                        </div>
+                    </div>
+                    <div class="skills__detail-item">
+                        <div class="skills__detail-item-name skills__detail-item-name--placeholder"></div>
+                        <div class="skills__detail-item-score">
+                            <div class="skills__detail-item-score-bar skills__detail-item-score-bar--placeholder"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -75,7 +79,7 @@
                 </li>
                 <li class="contact-details__github">
                     <i class="fab fa-github"></i>
-                    <a href="https://github.com/mike-trout" target="_blank">mike-trout</a>
+                    <a href="https://github.com/mike-trout" rel="noopener" target="_blank">mike-trout</a>
                 </li>
             </ul>
             <div class="education">

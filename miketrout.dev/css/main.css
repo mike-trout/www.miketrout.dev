@@ -118,6 +118,7 @@ main {
 .experience__item-description {
   color: black;
   grid-area: description;
+  justify-self: stretch;
   max-height: 30rem;
   overflow: hidden;
   text-align: justify;
@@ -181,6 +182,7 @@ main {
   color: hsl(280, 80%, 20%);
   font-weight: bold;
   grid-area: name;
+  justify-self: start;
   transition-delay: 250ms;
   transition-duration: 500ms;
   transition-property: background-color, color;
@@ -195,6 +197,7 @@ main {
 .projects__item-description {
   color: black;
   grid-area: description;
+  justify-self: stretch;
   max-height: 30rem;
   overflow: hidden;
   text-align: justify;

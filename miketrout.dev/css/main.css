@@ -64,7 +64,7 @@ main {
   transition-delay: 250ms;
   transition-duration: 500ms;
   transition-property: background-color;
-  transition-timing-function: ease-in;
+  transition-timing-function: ease-in-out;
 }
 .experience__item--placeholder {
   background-color: rgba(0, 0, 0, 0.02);
@@ -77,7 +77,7 @@ main {
   transition-delay: 250ms;
   transition-duration: 500ms;
   transition-property: background-color, color;
-  transition-timing-function: ease-in;
+  transition-timing-function: ease-in-out;
 }
 .experience__item-job-role--placeholder {
   background-color: hsla(280, 80%, 20%, 0.1);
@@ -92,7 +92,7 @@ main {
   transition-delay: 250ms;
   transition-duration: 500ms;
   transition-property: background-color, color;
-  transition-timing-function: ease-in;
+  transition-timing-function: ease-in-out;
 }
 .experience__item-date-range--placeholder {
   background-color: hsla(280, 80%, 45%, 0.1);
@@ -107,7 +107,7 @@ main {
   transition-delay: 250ms;
   transition-duration: 500ms;
   transition-property: background-color, color;
-  transition-timing-function: ease-in;
+  transition-timing-function: ease-in-out;
 }
 .experience__item-employer--placeholder {
   background-color: hsla(280, 80%, 45%, 0.1);
@@ -125,7 +125,7 @@ main {
   transition-delay: 250ms;
   transition-duration: 500ms;
   transition-property: background-color, color, max-height;
-  transition-timing-function: ease-in;
+  transition-timing-function: ease-in-out;
 }
 .experience__item-description p {
   margin: 0 0 1em 0;
@@ -173,7 +173,7 @@ main {
   transition-delay: 250ms;
   transition-duration: 500ms;
   transition-property: background-color;
-  transition-timing-function: ease-in;
+  transition-timing-function: ease-in-out;
 }
 .projects__item--placeholder {
   background-color: rgba(0, 0, 0, 0.02);
@@ -186,7 +186,7 @@ main {
   transition-delay: 250ms;
   transition-duration: 500ms;
   transition-property: background-color, color;
-  transition-timing-function: ease-in;
+  transition-timing-function: ease-in-out;
 }
 .projects__item-name--placeholder {
   background-color: hsla(280, 80%, 20%, 0.1);
@@ -204,7 +204,7 @@ main {
   transition-delay: 250ms;
   transition-duration: 500ms;
   transition-property: background-color, color, max-height;
-  transition-timing-function: ease-in;
+  transition-timing-function: ease-in-out;
 }
 .projects__item-description--placeholder {
   background-color: rgba(0, 0, 0, 0.03);
@@ -228,7 +228,7 @@ main {
   transition-delay: 250ms;
   transition-duration: 500ms;
   transition-property: background-color;
-  transition-timing-function: ease-in;
+  transition-timing-function: ease-in-out;
 }
 .skills__detail--placeholder {
   background-color: rgba(0, 0, 0, 0.02);
@@ -248,7 +248,7 @@ main {
   transition-delay: 250ms;
   transition-duration: 500ms;
   transition-property: background-color, color;
-  transition-timing-function: ease-in;
+  transition-timing-function: ease-in-out;
 }
 .skills__detail-item-name--placeholder {
   background-color: rgba(0, 0, 0, 0.03);
@@ -265,7 +265,7 @@ main {
   transition-delay: 250ms;
   transition-duration: 500ms;
   transition-property: width;
-  transition-timing-function: ease-in;
+  transition-timing-function: ease-in-out;
 }
 .skills__detail-item-score-bar--placeholder {
   width: 0;

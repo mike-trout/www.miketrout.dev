@@ -36,7 +36,9 @@ main {
   margin: 1rem 0;
 }
 .career-profile__content {
-  min-height: 5rem;
+  color: hsl(280, 80%, 10%);
+  padding: 0.5rem;
+  text-align: justify;
 }
 .career-profile__content--placeholder {
   background-color: rgba(0, 0, 0, 0.05);
@@ -116,7 +118,7 @@ main {
   width: 12rem;
 }
 .experience__item-description {
-  color: black;
+  color: hsl(280, 80%, 10%);
   grid-area: description;
   justify-self: stretch;
   max-height: 30rem;
@@ -195,7 +197,7 @@ main {
   width: 20rem;
 }
 .projects__item-description {
-  color: black;
+  color: hsl(280, 80%, 10%);
   grid-area: description;
   justify-self: stretch;
   max-height: 30rem;

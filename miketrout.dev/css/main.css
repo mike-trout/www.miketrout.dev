@@ -1,15 +1,25 @@
 :root {
-  font-family: Verdana, Arial, sans-serif;
-  font-size: 10pt;
+  font-family: 'Roboto', Verdana, Arial, sans-serif;
+  font-size: 11pt;
 }
 * {
   box-sizing: border-box;
+}
+a {
+  color: inherit;
+  text-decoration: underline;
+}
+a:hover {
+  text-decoration: none;
 }
 body {
   background-color: hsl(280, 80%, 93%);
   font-size: 1rem;
   margin: 0;
   padding: 0;
+}
+h1 {
+  font-weight: 900;
 }
 main {
   box-shadow: 0.25rem 0.25rem 1rem 0 rgba(0, 0, 0, 0.5);
@@ -19,6 +29,12 @@ main {
   margin: 3rem auto;
   max-width: 960px;
   width: 94vw;
+}
+p {
+  margin: 0 0 1em 0;
+}
+p:last-child {
+  margin: 0;
 }
 .main-content {
   background-color: hsl(280, 80%, 97%);
@@ -128,9 +144,6 @@ main {
   transition-duration: 500ms;
   transition-property: background-color, color, max-height;
   transition-timing-function: ease-in-out;
-}
-.experience__item-description p {
-  margin: 0 0 1em 0;
 }
 .experience__item-description--placeholder {
   background-color: rgba(0, 0, 0, 0.03);
@@ -317,12 +330,7 @@ main {
   padding: 0.25rem 0;
 }
 .contact-details a {
-  color: white !important;
   padding-left: 0.5rem;
-  text-decoration: none;
-}
-.contact-details a:hover {
-  text-decoration: underline;
 }
 .education {
   padding: 1.5rem;

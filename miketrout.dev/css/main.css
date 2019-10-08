@@ -1,5 +1,5 @@
 :root {
-  font-family: 'Roboto', Verdana, Arial, sans-serif;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
   font-size: 11pt;
 }
 * {
@@ -15,8 +15,8 @@ body {
   margin: 0;
   padding: 0;
 }
-h1 {
-  font-weight: 900;
+h1, h2 {
+  font-family: 'Roboto Slab', Georgia, 'Times New Roman', Times, serif;
 }
 main {
   box-shadow: 0.25rem 0.25rem 1rem 0 rgba(0, 0, 0, 0.5);

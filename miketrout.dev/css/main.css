@@ -9,9 +9,6 @@ a {
   color: inherit;
   text-decoration: underline;
 }
-a:hover {
-  text-decoration: none;
-}
 body {
   background-color: hsl(280, 80%, 93%);
   font-size: 1rem;
@@ -137,7 +134,7 @@ p:last-child {
   color: hsl(280, 80%, 10%);
   grid-area: description;
   justify-self: stretch;
-  max-height: 30rem;
+  max-height: 75rem;
   overflow: hidden;
   text-align: justify;
   transition-delay: 250ms;
@@ -148,8 +145,8 @@ p:last-child {
 .experience__item-description--placeholder {
   background-color: rgba(0, 0, 0, 0.03);
   color: transparent;
-  height: 10rem;
-  max-height: 10rem;
+  height: 15rem;
+  max-height: 15rem;
 }
 @media only screen and (max-width: 600px) {
   .experience__item {
@@ -213,7 +210,7 @@ p:last-child {
   color: hsl(280, 80%, 10%);
   grid-area: description;
   justify-self: stretch;
-  max-height: 30rem;
+  max-height: 75rem;
   overflow: hidden;
   text-align: justify;
   transition-delay: 250ms;
@@ -224,8 +221,8 @@ p:last-child {
 .projects__item-description--placeholder {
   background-color: rgba(0, 0, 0, 0.03);
   color: transparent;
-  height: 5rem;
-  max-height: 5rem;
+  height: 15rem;
+  max-height: 15rem;
 }
 .skills {
   margin: 0 0 1rem 0;

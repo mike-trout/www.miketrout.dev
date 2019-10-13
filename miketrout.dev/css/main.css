@@ -130,7 +130,7 @@ p:last-child {
   color: hsl(280, 80%, 10%);
   grid-area: description;
   justify-self: stretch;
-  max-height: 75rem;
+  max-height: 85rem;
   overflow: hidden;
   text-align: justify;
   transition-delay: 250ms;
@@ -206,7 +206,7 @@ p:last-child {
   color: hsl(280, 80%, 10%);
   grid-area: description;
   justify-self: stretch;
-  max-height: 75rem;
+  max-height: 65rem;
   overflow: hidden;
   text-align: justify;
   transition-delay: 250ms;

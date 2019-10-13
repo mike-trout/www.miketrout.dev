@@ -6,8 +6,10 @@
   box-sizing: border-box;
 }
 a {
-  color: inherit;
-  text-decoration: underline;
+  color: hsl(280, 80%, 20%);
+}
+a:hover {
+  color: hsl(280, 80%, 45%);
 }
 body {
   background-color: hsl(280, 80%, 93%);
@@ -327,7 +329,12 @@ p:last-child {
   padding: 0.25rem 0;
 }
 .contact-details a {
+  color: white;
   padding-left: 0.5rem;
+  text-decoration: none;
+}
+.contact-details a:hover {
+  text-decoration: underline;
 }
 .education {
   padding: 1.5rem;

@@ -5,12 +5,6 @@
 * {
   box-sizing: border-box;
 }
-a {
-  color: hsl(280, 80%, 20%);
-}
-a:hover {
-  color: hsl(280, 80%, 45%);
-}
 body {
   background-color: hsl(280, 80%, 93%);
   font-size: 1rem;
@@ -219,6 +213,12 @@ p:last-child {
   transition-duration: 500ms;
   transition-property: background-color, color, max-height;
   transition-timing-function: ease-in-out;
+}
+.projects__item-description a {
+  color: inherit;
+}
+.projects__item-description a:hover {
+  color: hsl(280, 80%, 45%);
 }
 .projects__item-description--placeholder {
   background-color: rgba(0, 0, 0, 0.03);

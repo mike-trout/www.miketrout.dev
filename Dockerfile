@@ -14,7 +14,7 @@ RUN minify ./css/main.css > ./css/main.min.css && \
     mv index.min.html index.html
 
 # Using Nginx as the base image
-FROM nginx
+FROM nginx:alpine
 # Copy in the Nginx config
 COPY www.miketrout.dev.conf /etc/nginx/conf.d/
 # Copy in the website source from the minify stage

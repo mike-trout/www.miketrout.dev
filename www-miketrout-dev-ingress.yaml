@@ -7,6 +7,18 @@ metadata:
     kubernetes.io/ingress.global-static-ip-name: "www-miketrout-dev-static-ip"
     networking.gke.io/managed-certificates: "www-miketrout-dev-certificate"
 spec:
-  backend:
-    serviceName: www-miketrout-dev-service
-    servicePort: 80
+  rules:
+    - http:
+        paths:
+          - path: /*
+            backend:
+              serviceName: www-miketrout-dev-service
+              servicePort: 80
+          - path: /employees-app
+            backend:
+              serviceName: employees-app
+              servicePort: 3000
+          - path: /employees-app/*
+            backend:
+              serviceName: employees-app
+              servicePort: 3000

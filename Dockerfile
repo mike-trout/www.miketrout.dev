@@ -8,6 +8,8 @@ COPY ./miketrout.dev /tmp/miketrout.dev
 WORKDIR /tmp/miketrout.dev
 RUN minify ./css/main.css > ./css/main.min.css && \
     mv ./css/main.min.css ./css/main.css && \
+    minify ./css/print.css > ./css/print.min.css && \
+    mv ./css/print.min.css ./css/print.css && \
     minify ./script/main.js > ./script/main.min.js && \
     mv ./script/main.min.js ./script/main.js && \
     minify index.html > index.min.html && \

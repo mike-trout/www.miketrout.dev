@@ -327,6 +327,7 @@ p:last-child {
 .contact-details li {
   color: white;
   padding: 0.25rem 0;
+  white-space: nowrap;
 }
 .contact-details a {
   color: white;

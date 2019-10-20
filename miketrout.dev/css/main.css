@@ -1,4 +1,12 @@
 :root {
+  --background-color-body: hsl(280, 80%, 93%);
+  --background-color-dark: hsl(280, 80%, 20%);
+  --background-color-light: hsl(280, 80%, 45%);
+  --background-color-main: hsl(280, 80%, 97%);
+  --text-color-content: hsl(280, 80%, 10%);
+  --text-color-heading: hsl(280, 80%, 20%);
+  --text-color-sidebar: white;
+  --text-color-subheading: hsl(280, 80%, 45%);
   font-family: 'Roboto', Arial, Helvetica, sans-serif;
   font-size: 11pt;
 }
@@ -6,7 +14,7 @@
   box-sizing: border-box;
 }
 body {
-  background-color: hsl(280, 80%, 93%);
+  background-color: var(--background-color-body);
   font-size: 1rem;
   margin: 0;
   padding: 0;
@@ -16,12 +24,23 @@ h1, h2 {
 }
 main {
   box-shadow: 0.25rem 0.25rem 1rem 0 rgba(0, 0, 0, 0.5);
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap-reverse;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: 1fr;
+  grid-template-areas:
+    "main-content sidebar";
   margin: 3rem auto;
   max-width: 960px;
   width: 94vw;
+}
+@media only screen and (max-width: 960px) {
+  main {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "sidebar"
+      "main-content";
+  }
 }
 p {
   margin: 0 0 1em 0;
@@ -29,11 +48,109 @@ p {
 p:last-child {
   margin: 0;
 }
-.main-content {
-  background-color: hsl(280, 80%, 97%);
+.sidebar {
+  background-color: var(--background-color-light);
+  grid-area: sidebar;
+  max-width: 94vw;
+}
+.profile {
+  align-items: center;
+  background-color: var(--background-color-dark);
   display: flex;
-  flex: 1 1 720px;
   flex-direction: column;
+  min-width: 15rem;
+  padding: 1rem 0;
+}
+.profile__picture {
+  padding: 1.5rem 0;
+}
+.profile__picture img {
+  border-radius: 50%;
+  height: 12rem;
+  object-fit: cover;
+  width: 12rem;
+}
+.profile__name {
+  color: var(--text-color-sidebar);
+  margin: 0;
+}
+.profile__job-role {
+  color: var(--text-color-sidebar);
+}
+.contact-details {
+  list-style: none;
+  padding: 1.5rem;
+  margin: 0;
+}
+.contact-details li {
+  color: var(--text-color-sidebar);
+  padding: 0.25rem 0;
+  white-space: nowrap;
+}
+.contact-details a {
+  color: var(--text-color-sidebar);
+  padding-left: 0.5rem;
+  text-decoration: none;
+}
+.contact-details a:hover {
+  text-decoration: underline;
+}
+.education {
+  padding: 1.5rem;
+}
+.education__title {
+  color: var(--text-color-sidebar);
+  margin: 0 0 0.75rem 0;
+}
+.education__qualification {
+  color: var(--text-color-sidebar);
+  margin: 0.25rem 0;
+}
+.education__establishment {
+  color: var(--text-color-sidebar);
+  font-size: 0.85em;
+  margin: 0.25rem 0;
+}
+.education__date-range {
+  color: var(--text-color-sidebar);
+  font-size: 0.85em;
+  margin: 0.25rem 0;
+}
+.languages {
+  padding: 1.5rem;
+}
+.languages__title {
+  color: var(--text-color-sidebar);
+  margin: 0 0 0.75rem 0;
+}
+.languages__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.languages__list-item {
+  color: var(--text-color-sidebar);
+  padding: 0.25rem 0;
+}
+.interests {
+  padding: 1.5rem;
+}
+.interests__title {
+  color: var(--text-color-sidebar);
+  margin: 0 0 0.75rem 0;
+}
+.interests__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.interests__list-item {
+  color: var(--text-color-sidebar);
+  padding: 0.25rem 0;
+}
+.main-content {
+  background-color: var(--background-color-main);
+  grid-area: main-content;
   max-width: 94vw;
   padding: 1.5rem;
 }
@@ -41,11 +158,11 @@ p:last-child {
   margin: 0 0 1rem 0;
 }
 .career-profile__title {
-  color: hsl(280, 80%, 20%);
+  color: var(--text-color-heading);
   margin: 1rem 0;
 }
 .career-profile__content {
-  color: hsl(280, 80%, 10%);
+  color: var(--text-color-content);
   padding: 0.5rem;
   text-align: justify;
 }
@@ -56,7 +173,7 @@ p:last-child {
   margin: 0;
 }
 .experience__title {
-  color: hsl(280, 80%, 20%);
+  color: var(--text-color-heading);
   margin: 1rem 0;
 }
 .experience__item {
@@ -81,7 +198,7 @@ p:last-child {
   background-color: rgba(0, 0, 0, 0.02);
 }
 .experience__item-job-role {
-  color: hsl(280, 80%, 20%);
+  color: var(--text-color-heading);
   font-weight: bold;
   grid-area: job-role;
   justify-self: start;
@@ -97,7 +214,7 @@ p:last-child {
   width: 20rem;
 }
 .experience__item-date-range {
-  color: hsl(280, 80%, 45%);
+  color: var(--text-color-subheading);
   grid-area: date-range;
   justify-self: end;
   transition-delay: 250ms;
@@ -112,7 +229,7 @@ p:last-child {
   width: 10rem;
 }
 .experience__item-employer {
-  color: hsl(280, 80%, 45%);
+  color: var(--text-color-subheading);
   grid-area: employer;
   justify-self: start;
   transition-delay: 250ms;
@@ -127,7 +244,7 @@ p:last-child {
   width: 12rem;
 }
 .experience__item-description {
-  color: hsl(280, 80%, 10%);
+  color: var(--text-color-content);
   grid-area: description;
   justify-self: stretch;
   max-height: 85rem;
@@ -164,7 +281,7 @@ p:last-child {
   margin: 0;
 }
 .projects__title {
-  color: hsl(280, 80%, 20%);
+  color: var(--text-color-heading);
   margin: 1rem 0;
 }
 .projects__item {
@@ -187,7 +304,7 @@ p:last-child {
   background-color: rgba(0, 0, 0, 0.02);
 }
 .projects__item-name {
-  color: hsl(280, 80%, 20%);
+  color: var(--text-color-heading);
   font-weight: bold;
   grid-area: name;
   justify-self: start;
@@ -203,7 +320,7 @@ p:last-child {
   width: 20rem;
 }
 .projects__item-description {
-  color: hsl(280, 80%, 10%);
+  color: var(--text-color-content);
   grid-area: description;
   justify-self: stretch;
   max-height: 65rem;
@@ -218,7 +335,7 @@ p:last-child {
   color: inherit;
 }
 .projects__item-description a:hover {
-  color: hsl(280, 80%, 45%);
+  color: var(--text-color-subheading);
 }
 .projects__item-description--placeholder {
   background-color: rgba(0, 0, 0, 0.03);
@@ -230,7 +347,7 @@ p:last-child {
   margin: 0 0 1rem 0;
 }
 .skills__title {
-  color: hsl(280, 80%, 20%);
+  color: var(--text-color-heading);
   margin: 1rem 0;
 }
 .skills__detail {
@@ -260,7 +377,7 @@ p:last-child {
   }
 }
 .skills__detail-item-name {
-  color: hsl(280, 80%, 20%);
+  color: var(--text-color-heading);
   font-weight: bold;
   height: 1.5rem;
   justify-self: stretch;
@@ -274,12 +391,12 @@ p:last-child {
   color: transparent;
 }
 .skills__detail-item-score {
-  background-color: hsl(280, 80%, 93%);
+  background-color: var(--background-color-body);
   height: 1.5rem;
   justify-self: stretch;
 }
 .skills__detail-item-score-bar {
-  background-color: hsl(280, 80%, 45%);
+  background-color: var(--background-color-light);
   height: 100%;
   transition-delay: 250ms;
   transition-duration: 500ms;
@@ -288,103 +405,4 @@ p:last-child {
 }
 .skills__detail-item-score-bar--placeholder {
   width: 0;
-}
-.sidebar {
-  background-color: hsl(280, 80%, 45%);
-  display: flex;
-  flex: 1 1 240px;
-  flex-direction: column;
-  max-width: 94vw;
-}
-.profile {
-  align-items: center;
-  background-color: hsl(280, 80%, 20%);
-  display: flex;
-  flex-direction: column;
-  padding: 1rem 0;
-}
-.profile__picture {
-  padding: 1.5rem 0;
-}
-.profile__picture img {
-  border-radius: 50%;
-  height: 160px;
-  object-fit: cover;
-  width: 160px;
-}
-.profile__name {
-  color: white;
-  margin: 0;
-}
-.profile__job-role {
-  color: rgba(255, 255, 255, 0.8);
-}
-.contact-details {
-  list-style: none;
-  padding: 1.5rem;
-  margin: 0;
-}
-.contact-details li {
-  color: white;
-  padding: 0.25rem 0;
-  white-space: nowrap;
-}
-.contact-details a {
-  color: white;
-  padding-left: 0.5rem;
-  text-decoration: none;
-}
-.contact-details a:hover {
-  text-decoration: underline;
-}
-.education {
-  padding: 1.5rem;
-}
-.education__title {
-  color: white;
-  margin: 0 0 0.75rem 0;
-}
-.education__qualification {
-  color: white;
-  margin: 0.25rem 0;
-}
-.education__establishment {
-  color: rgba(255, 255, 255, 0.8);
-  margin: 0.25rem 0;
-}
-.education__date-range {
-  color: rgba(255, 255, 255, 0.8);
-  margin: 0.25rem 0;
-}
-.languages {
-  padding: 1.5rem;
-}
-.languages__title {
-  color: white;
-  margin: 0 0 0.75rem 0;
-}
-.languages__list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.languages__list-item {
-  color: white;
-  padding: 0.25rem 0;
-}
-.interests {
-  padding: 1.5rem;
-}
-.interests__title {
-  color: white;
-  margin: 0 0 0.75rem 0;
-}
-.interests__list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.interests__list-item {
-  color: white;
-  padding: 0.25rem 0;
 }

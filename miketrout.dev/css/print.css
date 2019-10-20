@@ -1,81 +1,97 @@
-@media print {
-    @page {
-      margin: 1.5cm;
-      size: A4 portrait;
-    }
-    a {
-      text-decoration: none;
-    }
-    body {
-      background: none;
-    }
-    main {
-      box-shadow: none;
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap-reverse;
-      margin: 0;
-      max-width: 100%;
-      width: 100%;
-    }
-    p {
-      -webkit-break-inside: avoid;
-      page-break-inside: avoid;
-      break-inside: avoid;
-    }
-    .main-content {
-      background: none;
-      display: flex;
-      flex: 1 1 100%;
-      flex-direction: column;
-      max-width: 100%;
-      padding: 0;
-      width: 100%;
-    }
-    .skills {
-      -webkit-break-inside: avoid;
-      page-break-inside: avoid;
-      break-inside: avoid;
-    }
-    .sidebar {
-      background-color: hsl(280, 80%, 45%);
-      display: grid;
-      grid-column-gap: 0;
-      grid-row-gap: 0;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-      grid-template-rows: auto auto;
-      grid-template-areas:
-        "profile education languages interests"
-        "contact-details education languages interests";
-      max-width: 100%;
-      width: 100%;
-    }
-    .profile {
-      align-items: flex-start;
-      background: none;
-      grid-area: profile;
-      padding: 1.5rem;
-    }
-    .profile__name {
-      margin-bottom: 0.5rem;
-    }
-    .profile__job-role {
-      margin: 0;
-    }
-    .profile__picture {
-      display: none;
-    }
-    .contact-details {
-      grid-area: contact-details;
-      padding: 0 1.5rem 1.5rem 1.5rem;
-    }
-    .education {
-      grid-area: education;
-    }
-    .languages {
-      grid-area: languages;
-    }
-    .interests {
-      grid-area: interests;
-    }
+@page {
+  margin: 2.54cm 1.7cm;
+  size: A4 portrait;
+}
+:root {
+  --background-color-body: white;
+  --background-color-dark: white;
+  --background-color-light: white;
+  --background-color-main: white;
+  --text-color-content: rgb(31, 31, 31);
+  --text-color-heading: black;
+  --text-color-sidebar: rgb(31, 31, 31);
+  --text-color-subheading: rgb(63, 63, 63);
+  font-size: 9pt;
+}
+a {
+  text-decoration: none;
+}
+body {
+  background: none;
+}
+main {
+  box-shadow: none;
+  display: block;
+  margin: 0;
+  max-width: 100%;
+  width: 100%;
+}
+p {
+  page-break-inside: avoid;
+}
+.sidebar {
+  border-bottom: 2px solid var(--text-color-content);
+  display: grid;
+  grid-column-gap: 1.5rem;
+  grid-row-gap: 1.5rem;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "profile education languages interests"
+    "contact-details education languages interests";
+  max-width: 100%;
+  padding-bottom: 1.5rem;
+}
+.profile {
+  align-items: flex-start;
+  grid-area: profile;
+  padding: 0;
+}
+.profile__picture {
+  display: none;
+}
+.profile__name {
+  margin-bottom: 0.5rem;
+}
+.profile__job-role {
+  margin: 0;
+}
+.contact-details {
+  grid-area: contact-details;
+  padding: 0;
+}
+.education {
+  grid-area: education;
+  padding: 0;
+}
+.languages {
+  grid-area: languages;
+  padding: 0;
+}
+.interests {
+  grid-area: interests;
+  padding: 0;
+}
+.main-content {
+  max-width: 100%;
+  padding: 0;
+  width: 100%;
+}
+.career-profile {
+  page-break-inside: avoid;
+}
+.experience {
+  page-break-inside: avoid;
+}
+.projects {
+  page-break-inside: avoid;
+}
+.skills {
+  page-break-inside: avoid;
+}
+.skills__detail-item-score {
+  background: none;
+}
+.skills__detail-item-score-bar {
+  border: 0.75rem solid grey;
 }

@@ -50,6 +50,23 @@ function createExperienceItemPlaceholders(count) {
   }
 }
 
+// Create a fixed position bar warning that Internet Explorer is
+// an unsupported browser
+function createInternetExplorerWarningBar() {
+  var div = document.createElement('div');
+  div.style.backgroundColor = 'deepskyblue';
+  div.style.padding = '0.5rem 0';
+  div.style.position = 'fixed';
+  div.style.top = 0;
+  div.style.width = '100%';
+  var h3 = document.createElement('h3');
+  h3.innerText = 'This website does not support Internet Explorer. Consider using a modern browser.';
+  h3.style.color = 'white';
+  h3.style.textAlign = 'center';
+  div.appendChild(h3);
+  return div;
+}
+
 // Create the placeholders for the projects items
 // count: Number of placeholders to create
 function createProjectsItemPlaceholders(count) {
@@ -213,20 +230,24 @@ function getResource(url, displayResourceCallback, params) {
         var resource = JSON.parse(xhr.responseText);
         displayResourceCallback(resource, params);
       } else {
-        console.error(`Error getting resource ${url}\n${xhr.statusText}`);
+        console.error('Error getting resource ' + url + '\n' + xhr.statusText);
       }
     }
   }
   xhr.onerror = function (e) {
-    console.error(`Error getting resource ${url}\n${e}`);
+    console.error('Error getting resource ' + url + '\n' + e);
   }
   xhr.timeout = function () {
-    console.error(`Timed out getting resource ${url}`)
+    console.error('Timed out getting resource ' + url);
   }
   xhr.send();
 }
 
 document.body.onload = function () {
+  // Check if the browser is Internet Explorer and, if so, warn the user
+  // that it is unsupported
+  var isIE = /MSIE|Trident/.test(window.navigator.userAgent);
+  if (isIE) document.body.appendChild(createInternetExplorerWarningBar());
   // Get the Experience resource
   getResource('https://api.miketrout.dev/experience/', displayExperienceCallback);
   // Get the Projects resource

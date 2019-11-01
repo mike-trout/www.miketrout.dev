@@ -58,6 +58,7 @@ p:last-child {
   background-color: var(--background-color-dark);
   display: flex;
   flex-direction: column;
+  margin: 0 0 3rem 0;
   min-width: 15rem;
   padding: 1rem 0;
 }
@@ -79,12 +80,12 @@ p:last-child {
 }
 .contact-details {
   list-style: none;
-  padding: 1.5rem;
-  margin: 0;
+  margin: 0 0 3rem 0;
+  padding: 0 1.5rem;
 }
 .contact-details li {
   color: var(--text-color-sidebar);
-  padding: 0.25rem 0;
+  margin: 0 0 1rem 0;
   white-space: nowrap;
 }
 .contact-details a {
@@ -96,7 +97,8 @@ p:last-child {
   text-decoration: underline;
 }
 .education {
-  padding: 1.5rem;
+  margin: 0 0 3rem 0;
+  padding: 0 1.5rem;
 }
 .education__title {
   color: var(--text-color-sidebar);
@@ -117,7 +119,8 @@ p:last-child {
   margin: 0.25rem 0;
 }
 .languages {
-  padding: 1.5rem;
+  margin: 0 0 3rem 0;
+  padding: 0 1.5rem;
 }
 .languages__title {
   color: var(--text-color-sidebar);
@@ -133,7 +136,8 @@ p:last-child {
   padding: 0.25rem 0;
 }
 .interests {
-  padding: 1.5rem;
+  margin: 0 0 3rem 0;
+  padding: 0 1.5rem;
 }
 .interests__title {
   color: var(--text-color-sidebar);

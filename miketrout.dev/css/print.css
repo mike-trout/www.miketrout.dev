@@ -45,6 +45,7 @@ p {
 .profile {
   align-items: flex-start;
   grid-area: profile;
+  margin: 0;
   padding: 0;
 }
 .profile__picture {
@@ -58,18 +59,22 @@ p {
 }
 .contact-details {
   grid-area: contact-details;
+  margin: 0;
   padding: 0;
 }
 .education {
   grid-area: education;
+  margin: 0;
   padding: 0;
 }
 .languages {
   grid-area: languages;
+  margin: 0;
   padding: 0;
 }
 .interests {
   grid-area: interests;
+  margin: 0;
   padding: 0;
 }
 .main-content {

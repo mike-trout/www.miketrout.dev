@@ -1,11 +1,11 @@
 ---
-arch: arm64-graviton2 # in AWS over Graviton2 CPU
-virt: lxd             # required, routes to an LXD container
+# arch: arm64-graviton2 # in AWS over Graviton2 CPU
+# virt: lxd             # required, routes to an LXD container
 os: linux             # required for arch different than amd64
 dist: focal           # or bionic | xenial with xenial as default
 group: edge
 
-language: minimal
+language: shell
 
 services:
 - docker
@@ -32,6 +32,5 @@ script:
 deploy:
   provider: script
   script: bash deploy.sh
-  skip_cleanup: true
   on:
     branch: master

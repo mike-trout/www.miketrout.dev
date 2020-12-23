@@ -4,10 +4,10 @@
 set -e
 
 # Install gcloud
-curl https://sdk.cloud.google.com | bash > /dev/null
+# curl https://sdk.cloud.google.com | bash > /dev/null
 
 # Promote gcloud to PATH top priority (prevent using old version from Travis)
-source $HOME/google-cloud-sdk/path.bash.inc
+# source $HOME/google-cloud-sdk/path.bash.inc
 
 # Make sure kubectl is updated to latest version
 gcloud components update kubectl

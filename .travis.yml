@@ -25,9 +25,9 @@ before_install:
 
 script:
 - docker --version
-- "echo '{ \"experimental\": true }' | sudo tee /etc/docker/daemon.json"
+- "echo '{ \"experimental\": \"enabled\" }' | sudo tee /etc/docker/daemon.json"
 - mkdir -p $HOME/.docker
-- "echo '{ \"experimental\": true }' | sudo tee $HOME/.docker/config.json"
+- "echo '{ \"experimental\": \"enabled\" }' | sudo tee $HOME/.docker/config.json"
 - sudo service docker restart
 - docker buildx build --platform=linux/amd64,linux/arm64 --tag miketrout/www.miketrout.dev .
 - echo "$DOCKER_HUB_PASSWORD" | docker login -u "$DOCKER_HUB_USERNAME" --password-stdin

@@ -5,6 +5,11 @@ set -e
 
 # Install gcloud
 # curl https://sdk.cloud.google.com | bash > /dev/null
+echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] http://packages.cloud.google.com/apt cloud-sdk main" \
+  | tee -a /etc/apt/sources.list.d/google-cloud-sdk.list \
+  && curl https://packages.cloud.google.com/apt/doc/apt-key.gpg \
+  | apt-key --keyring /usr/share/keyrings/cloud.google.gpg  add - \
+  && apt-get update -y && apt-get install google-cloud-sdk -y
 
 # Promote gcloud to PATH top priority (prevent using old version from Travis)
 # source $HOME/google-cloud-sdk/path.bash.inc

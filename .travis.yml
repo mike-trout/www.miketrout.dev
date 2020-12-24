@@ -25,7 +25,7 @@ before_install:
 
 script:
 - docker --version
-- docker build --tag miketrout/www.miketrout.dev .
+- docker build --platform linux/amd64 --tag miketrout/www.miketrout.dev .
 - echo "$DOCKER_HUB_PASSWORD" | docker login -u "$DOCKER_HUB_USERNAME" --password-stdin
 - docker push miketrout/www.miketrout.dev
 

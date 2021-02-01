@@ -251,7 +251,7 @@ p:last-child {
   color: var(--text-color-content);
   grid-area: description;
   justify-self: stretch;
-  max-height: 85rem;
+  max-height: 100rem;
   overflow: hidden;
   text-align: justify;
   transition-delay: 250ms;

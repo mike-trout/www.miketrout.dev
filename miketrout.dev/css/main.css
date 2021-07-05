@@ -170,6 +170,12 @@ p:last-child {
   padding: 0.5rem;
   text-align: justify;
 }
+.career-profile__content a {
+  color: inherit;
+}
+.career-profile__content a:hover {
+  color: var(--text-color-subheading);
+}
 .career-profile__content--placeholder {
   background-color: rgba(0, 0, 0, 0.05);
 }

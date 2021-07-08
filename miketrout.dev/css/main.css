@@ -265,6 +265,12 @@ p:last-child {
   transition-property: background-color, color, max-height;
   transition-timing-function: ease-in-out;
 }
+.experience__item-description a {
+  color: inherit;
+}
+.experience__item-description a:hover {
+  color: var(--text-color-subheading);
+}
 .experience__item-description--placeholder {
   background-color: rgba(0, 0, 0, 0.03);
   color: transparent;

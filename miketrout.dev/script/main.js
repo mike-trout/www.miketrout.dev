@@ -170,6 +170,7 @@ function displayExperienceItemCallback(experienceItem, params) {
   var experienceItemDescriptionDiv = document.getElementsByClassName('experience__item-description')[index];
   experienceItemDescriptionDiv.innerHTML = experienceItem.description;
   experienceItemDescriptionDiv.classList.remove('experience__item-description--placeholder');
+  experienceItemDescriptionDiv.style.maxHeight = experienceItemDescriptionDiv.scrollHeight + 'px';
   experienceItemDiv.classList.remove('experience__item--placeholder');
 }
 

@@ -189,6 +189,7 @@ function displayProjectsCallback(projects) {
       var projectsItemDescriptionDiv = document.getElementsByClassName('projects__item-description')[i];
       projectsItemDescriptionDiv.innerHTML = projects[i].description;
       projectsItemDescriptionDiv.classList.remove('projects__item-description--placeholder');
+      projectsItemDescriptionDiv.style.maxHeight = projectsItemDescriptionDiv.scrollHeight + 'px';
       var projectsItemDiv = document.getElementsByClassName('projects__item')[i];
       projectsItemDiv.classList.remove('projects__item--placeholder');
     }
